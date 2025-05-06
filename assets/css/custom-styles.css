@@ -1,0 +1,59 @@
+/**
+ * Arthur Belanger
+ * Maine Bread of Life - Augusta, Maine
+ * Custom styles for Bread of Life website
+ * Created to replace inline styles and strengthen Content Security Policy
+ */
+
+/* Critical CSS for Bread of Life website */
+:root {
+	--font-default: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-primary: "Poppins", sans-serif;
+	--font-secondary: "Raleway", sans-serif;
+	--color-default: #222222;
+	--color-primary: #0d6efd;
+	--color-secondary: #f85a40;
+	--accent-color: #fd7e14;
+	--heading-color: #054f87;
+	--background-color: #ebf5fb;
+	--header-color: rgba(5, 79, 135, 0.5);
+	--contrast-color: #ffffff;
+	--red-background: #c4101d;
+}
+
+/* Fix for link colors overridden by Bootstrap */
+body a {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+
+/* Preserve specific link styles */
+.navbar a,
+.navbar .navbar-nav .nav-link,
+footer .footer-links ul a,
+.hero a.btn-get-started,
+.social-links a,
+.nav-menu a,
+.nav-item a {
+	color: inherit;
+}
+
+.footer-links h4 {
+	color: var(--contrast-color);
+}
+
+/* Specific alignment fix for volunteer page */
+.service-details-page .blog-details {
+	padding-bottom: 20px;
+}
+
+.service-details-page .sidebar .widgets-container {
+	padding-bottom: 20px;
+}
+
+/* Fix specific to volunteer.html without changing structure */
+#volunteer-alignment-fix .blog-details,
+#volunteer-alignment-fix .sidebar .widgets-container {
+	margin-bottom: 1rem;
+}
+

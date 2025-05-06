@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<div id="popupTrigger">Ask Victoria!</div>
+
+					<<div id="popupOverlay">
+						<div id="popupContent">
+							<center>
+								<img id="popupImage" src="assets/img/1.webp" alt="Popup Image">
+							</center>
+							<p>Praesent quis orci sit amet ante facilisis suscipit. Integer in eros molestie, ultricies arcu ac, cursus quam. Nulla facilisi. Ut egestas semper magna ac condimentum. Aliquam erat volutpat. Sed bibendum sollicitudin orci, at viverra metus vehicula sed.</p>
+						</div>
+					</div>
+___________________________________________________
+
+Style
+
+
+#popupTrigger {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  width: 6.25rem;
+  height: 3.5rem;
+  background-color: #054f87;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: 3.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 0.625rem #0d6efdblue;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 0.625rem #f85a40;
+  }
+  to {
+    box-shadow: 0 0 1.25rem #fd7e14;
+  }
+}
+
+#popupOverlay {
+  display: none;
+  position: fixed;
+  top: 0; /* Ensure it covers the top */
+  left: 0; /* Ensure it covers the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+
+  justify-content: flex-start; /* Align content to the left */
+  align-items: flex-end; /* Align content to the bottom */
+  pointer-events: auto; /* Ensure clicks are registered */
+  z-index: 1000;
+}
+
+#popupContent {
+  position: relative; /* Position relative to the overlay */
+  background-color: #e0f7fa;
+  color: #212121;
+  padding: 15px;
+  padding-bottom: 3.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: left;
+  margin-bottom: 3rem;
+  /* Positioning the popup relative to the button */
+  bottom: calc(2rem + 1rem); /* Align bottom 1rem above button top */
+  left: calc(20px + 5rem); /* Align left about 3rem to the right of button right */
+}
+
+#popupImage {
+  position: absolute;
+  bottom: 1rem; /* Adjust vertical position from the top */
+  left: 1.5rem; /* Adjust horizontal position from the left */
+  width: 80%; /* Set the desired width of the image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+__________________________________________________________________
+
+JS
+
+
+    const popupTrigger = document.getElementById('popupTrigger');
+    const popupOverlay = document.getElementById('popupOverlay');
+
+    popupTrigger.addEventListener('click', () => {
+      popupOverlay.style.display = 'flex';
+  });
+
+    popupOverlay.addEventListener('click', (event) => {
+      if (event.target === popupOverlay) {
+        popupOverlay.style.display = 'none';
+    }
+});
+    
+})
+
+
+
+	
+</body>
+</html>

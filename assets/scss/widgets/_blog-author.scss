@@ -1,0 +1,33 @@
+.blog-author-widget {
+  img {
+    max-width: 160px;
+  }
+
+  h4 {
+    font-weight: 600;
+    font-size: 24px;
+    margin: 15px 0 0 0;
+    padding: 0;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+  }
+
+  .social-links {
+    margin: 5px 0;
+
+    a {
+      color: color-mix(in srgb, var(--default-color), transparent 60%);
+      margin: 0 3px;
+      font-size: 18px;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  p {
+    font-style: italic;
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    margin: 10px 0 0 0;
+  }
+}

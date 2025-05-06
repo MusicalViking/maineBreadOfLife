@@ -1,0 +1,47 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Features Section
+--------------------------------------------------------------*/
+.features {
+  .features-item {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+
+    &+.features-item {
+      margin-top: 100px;
+
+      @media (max-width: 640px) {
+        margin-top: 40px;
+      }
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 26px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+
+      i {
+        font-size: 20px;
+        padding-right: 4px;
+        color: var(--accent-color);
+      }
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

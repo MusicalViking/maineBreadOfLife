@@ -1,0 +1,39 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about {
+  .content {
+    h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 10px 0 0 0;
+        display: flex;
+      }
+
+      i {
+        color: var(--accent-color);
+        margin-right: 0.5rem;
+        line-height: 1.2;
+        font-size: 1.25rem;
+      }
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .pulsating-play-btn {
+    position: absolute;
+    left: calc(50% - 47px);
+    top: calc(50% - 47px);
+  }
+}

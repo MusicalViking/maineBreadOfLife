@@ -1,0 +1,187 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  min-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: transparent;
+
+  // &:before {
+  //   content: '';
+  //   background: color-mix(in srgb, var(--background-color), transparent 30%);
+  //   position: absolute;
+  //   inset: 0;
+  //   z-index: 2;
+  // }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 130%;
+    height: 95%;
+    background: linear-gradient(to right, color-mix(in srgb, var(--background-color), transparent 90%), var(--background-color)), url("../img/hero-bg.jpg") center top no-repeat;
+    background-size: cover;
+    z-index: 0;
+    border-radius: 0 0 50% 50%;
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 130%;
+    height: 96%;
+    background: var(--background-color);
+    opacity: 0.3;
+    z-index: 0;
+    border-radius: 0 0 50% 50%;
+    transform: translateX(-50%) translateY(18px) rotate(2deg);
+  }
+
+  img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+  }
+
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+    font-size: 48px;
+    font-weight: 700;
+    animation: fadeInDown 1s both;
+    display: block;
+  }
+
+  p {
+    width: 80%;
+    margin: 0 auto 30px auto;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    animation: fadeInDown 1s both 0.2s;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+  }
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    background: none;
+    font-size: 48px;
+    line-height: 1;
+    width: auto;
+    height: auto;
+  }
+
+  .btn-get-started {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    color: var(--default-color);
+    animation: fadeInUp 1s both 0.4s;
+    border: 2px solid var(--accent-color);
+
+    &:hover {
+      background: var(--accent-color);
+      color: var(--contrast-color);
+      text-decoration: none;
+    }
+  }
+
+  .carousel-indicators {
+    bottom: -60px;
+
+    li {
+      cursor: pointer;
+      background: var(--default-color);
+      overflow: hidden;
+      border: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50px;
+      opacity: .3;
+      transition: 0.3s;
+
+      &.active {
+        opacity: 1;
+        background: var(--accent-color);
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    p {
+      width: 60%;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 5%;
+    }
+  }
+
+  @media (max-width: 768px),
+  (max-height: 700px) {
+    h2 {
+      font-size: 28px;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

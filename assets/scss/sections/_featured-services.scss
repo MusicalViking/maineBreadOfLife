@@ -1,0 +1,144 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Featured Services Section
+--------------------------------------------------------------*/
+.featured-services {
+  --cyan-color: #0dcaf0;
+  ;
+  --orange-color: #fd7e14;
+  --teal-color: #20c997;
+  --red-color: #df1529;
+
+  .service-item {
+    background-color: var(--surface-color);
+    box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    padding: 40px 30px;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 5px;
+    border: 1px solid transparent;
+
+    .icon {
+      margin: 0 auto;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      transition: ease-in-out 0.3s;
+      position: relative;
+
+      i {
+        font-size: 28px;
+        transition: 0.5s;
+        position: relative;
+      }
+    }
+
+    h3 {
+      font-weight: 700;
+      margin: 10px 0 15px 0;
+      font-size: 22px;
+    }
+
+    p {
+      line-height: 24px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    &.item-cyan {
+      .icon {
+        background-color: color-mix(in srgb, var(--cyan-color) 10%, white 95%);
+
+        i {
+          color: var(--cyan-color);
+        }
+      }
+
+      &:hover {
+        border-color: var(--cyan-color);
+
+        .icon {
+          background-color: var(--cyan-color);
+
+          i {
+            color: var(--contrast-color)
+          }
+        }
+      }
+    }
+
+    &.item-orange {
+      .icon {
+        background-color: color-mix(in srgb, var(--orange-color) 10%, white 95%);
+
+        i {
+          color: var(--orange-color);
+        }
+      }
+
+      &:hover {
+        border-color: var(--orange-color);
+
+        .icon {
+          background-color: var(--orange-color);
+
+          i {
+            color: var(--contrast-color)
+          }
+        }
+      }
+    }
+
+    &.item-teal {
+      .icon {
+        background-color: color-mix(in srgb, var(--teal-color) 10%, white 95%);
+
+        i {
+          color: var(--teal-color);
+        }
+      }
+
+      &:hover {
+        border-color: var(--teal-color);
+
+        .icon {
+          background-color: var(--teal-color);
+
+          i {
+            color: var(--contrast-color)
+          }
+        }
+      }
+    }
+
+    &.item-red {
+      .icon {
+        background-color: color-mix(in srgb, var(--red-color) 10%, white 95%);
+
+        i {
+          color: var(--red-color);
+        }
+      }
+
+      &:hover {
+        border-color: var(--red-color);
+
+        .icon {
+          background-color: var(--red-color);
+
+          i {
+            color: var(--contrast-color)
+          }
+        }
+      }
+    }
+  }
+}
