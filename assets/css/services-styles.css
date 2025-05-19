@@ -4,11 +4,11 @@
     border-radius: 0.5rem;
     overflow: hidden;
     background: #fff;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 0.0625rem solid rgba(0,0,0,0.05);
 }
 
 .services-grid .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
 }
 
@@ -56,7 +56,7 @@
 }
 
 .how-it-works .step:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
     box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
 }
 
@@ -82,7 +82,7 @@
 }
 
 .ways-to-help .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
     box-shadow: 0 1rem 3rem rgba(0,0,0,0.1) !important;
 }
 
@@ -91,7 +91,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 767.98px) {
+@media (max-width: 48rem) {
     .display-4 {
         font-size: 2.5rem;
     }
@@ -114,7 +114,7 @@
 /* Animation for stats counter */
 @keyframes countUp {
     from { 
-        transform: translateY(20px);
+        transform: translateY(1.25rem);
         opacity: 0;
     }
     to { 

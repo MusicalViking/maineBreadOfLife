@@ -491,7 +491,7 @@ h6 {
 
 	.mobile-nav-active .navmenu ul {
 		display: block;
-		padding: 0 15px;
+		padding: 0 1rem;
 	}
 
 	.mobile-nav-active .navmenu ul li {
@@ -795,13 +795,13 @@ h6 {
 	color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
 	.page-title {
 		padding: 5rem 0 2rem 0;
 	}
 }
 
-@media (max-width: 576px) {
+@media (max-width: 36rem) {
 	.page-title {
 		padding: 4rem 0 1.5rem 0;
 	}
@@ -1648,20 +1648,20 @@ h6 {
 --------------------------------------------------------------*/
 .faq .content h3 {
 	font-weight: 400;
-	font-size: 34px;
+	font-size: 2.125rem;
   }
   
   .faq .content p {
-	font-size: 15px;
+	font-size: 1rem;
 	color: color-mix(in srgb, var(--default-color), transparent 30%);
   }
   
   .faq .faq-container .faq-item {
 	background-color: var(--surface-color);
 	position: relative;
-	padding: 20px;
-	margin-bottom: 20px;
-	box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
+	padding: 1.25rem;
+	margin-bottom: 1.25rem;
+	box-shadow: 0rem 0.375rem 1.5rem 0rem rgba(0, 0, 0, 0.1);
 	overflow: hidden;
   }
   
@@ -1671,9 +1671,9 @@ h6 {
   
   .faq .faq-container .faq-item h3 {
 	font-weight: 600;
-	font-size: 18px;
-	line-height: 24px;
-	margin: 0 30px 0 0;
+	font-size: 1.125rem;
+	line-height: 1.5rem;
+	margin: 0 1.875rem 0 0;
 	transition: 0.3s;
 	cursor: pointer;
 	display: flex;
@@ -1682,7 +1682,7 @@ h6 {
   
   .faq .faq-container .faq-item h3 .num {
 	color: var(--accent-color);
-	padding-right: 5px;
+	padding-right: 0.3875rem;
   }
   
   .faq .faq-container .faq-item h3:hover {
@@ -1704,9 +1704,9 @@ h6 {
   
   .faq .faq-container .faq-item .faq-toggle {
 	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 16px;
+	top: 1.25rem;
+	right: 1.25rem;
+	font-size: 1rem;
 	line-height: 0;
 	transition: 0.3s;
 	cursor: pointer;
@@ -1724,7 +1724,7 @@ h6 {
 	grid-template-rows: 1fr;
 	visibility: visible;
 	opacity: 1;
-	padding-top: 10px;
+	padding-top: 0.625rem;
   }
   
   .faq .faq-container .faq-active .faq-toggle {
@@ -2008,7 +2008,7 @@ h6 {
 }
 
 /* Alignment for volunteer page */
-@media (min-width: 992px) {
+@media (min-width: 62rem) {
 	.service-details-page .row {
 		display: flex;
 		flex-wrap: wrap;
@@ -2021,14 +2021,14 @@ h6 {
 	}
 
 	.service-details-page .blog-details {
-		padding-bottom: 30px;
-		height: calc(100% - 30px);
-		margin-bottom: 30px;
+		padding-bottom: 1.875rem;
+		height: calc(100% - 1.875rem);
+		margin-bottom: 1.875rem;
 	}
 
 	.service-details-page .sidebar .widgets-container {
-		height: calc(100% - 30px);
-		margin-bottom: 30px;
+		height: calc(100% - 1.875rem);
+		margin-bottom: 1.875rem;
 	}
 }
 
@@ -2187,7 +2187,7 @@ input[type="file"] {
 
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 62rem) {
 
 	.contact-info-container,
 	.comment-form {
@@ -2552,14 +2552,14 @@ input[type="file"] {
 	transform-origin: 0 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
 	.g-recaptcha {
 		transform: scale(0.77);
 		transform-origin: 0 0;
 	}
 }
 
-@media (max-width: 360px) {
+@media (max-width: 22.5rem) {
 	.g-recaptcha {
 		transform: scale(0.7);
 		transform-origin: 0 0;
