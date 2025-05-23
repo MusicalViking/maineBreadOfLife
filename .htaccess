@@ -4,12 +4,16 @@ RewriteEngine On
 <IfModule mod_headers.c>
   # Push CSS
   <FilesMatch "index\.html$">
-    Header add Link "</assets/css/all.min.css>;rel=preload;as=style"
+    Header add Link "</assets/css/main.css>;rel=preload;as=style"
+    Header add Link "</assets/css/custom-styles.css>;rel=preload;as=style"
+    Header add Link "</assets/css/service-styles.css>;rel=preload;as=style"
     Header add Link "</assets/vendor/bootstrap/css/bootstrap.min.css>;rel=preload;as=style"
     Header add Link "</assets/vendor/bootstrap-icons/bootstrap-icons.min.css>;rel=preload;as=style"
     
     # Push JS
-    Header add Link "</assets/js/all.min.js>;rel=preload;as=script"
+    Header add Link "</assets/js/main.js>;rel=preload;as=script"
+    Header add Link "</assets/js/form-handler.js>;rel=preload;as=script"
+    Header add Link "</assets/js/custom-scripts.js>;rel=preload;as=script"
     Header add Link "</assets/vendor/bootstrap/js/bootstrap.bundle.min.js>;rel=preload;as=script"
   </FilesMatch>
 </IfModule>
@@ -25,6 +29,24 @@ Deny from all
 Order Allow,Deny
 Deny from all
 </FilesMatch>
+
+# Block sensitive paths
+RedirectMatch 404 /\.git(/|$)
+RedirectMatch 404 /node_modules(/|$)
+RedirectMatch 404 /\.env(/|$)
+
+# Security Policy Redirect
+Redirect 301 /security.txt /security-policy.html
+
+# New security policy redirect
+Redirect 301 /security.txt /security-policy.html
+
+# RSS Feed Configuration
+Redirect 301 /feed.rss /feed.php
+<Files "feed.php">
+    Require all granted
+    AddType application/rss+xml .php
+</Files>
 
 # Remove .html from URLs and allow access without file extension
 RewriteCond %{REQUEST_FILENAME}.html -f
@@ -103,10 +125,14 @@ RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-src 'self' https://www.google.com;"
   
   # Feature Policy / Permissions Policy
-  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+  Header always set Permissions-Policy "geolocation=(), midi=(), camera=(), microphone=()"
   
   # Set Strict Transport Security (HSTS) for HTTPS
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  
+  # Additional security headers
+  Header always set Cross-Origin-Embedder-Policy "require-corp"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
 </IfModule>
 
 # Form Submission Security
@@ -140,11 +166,11 @@ RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
 </IfModule>
 
 # Custom Error Pages
-ErrorDocument 400 /error.html
-ErrorDocument 401 /error.html
-ErrorDocument 403 /error.html
 ErrorDocument 404 /error.html
 ErrorDocument 500 /error.html
+ErrorDocument 403 /error.html
+ErrorDocument 401 /error.html
+ErrorDocument 400 /error.html
 
 # Force HTTPS (uncomment when ready to enforce SSL)
 # <IfModule mod_rewrite.c>
@@ -161,6 +187,11 @@ ErrorDocument 500 /error.html
   RewriteCond %{HTTP_REFERER} !^https://www\.google\.com/.*$ [NC]
   RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F]
 </IfModule>
+
+# Add caching headers for static assets
+<FilesMatch "\.(css|js|webp|woff2)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
 
 # Add ETags for better cache validation
 <IfModule mod_headers.c>

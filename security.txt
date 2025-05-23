@@ -1,0 +1,6 @@
+# Maine Bread of Life Security Policy
+Contact: security@mainebreadoflife.org
+Encryption: https://mainebreadoflife.org/pgp-key.txt
+Acknowledgments: https://mainebreadoflife.org/security-hall-of-fame
+Preferred-Languages: en
+Policy: https://mainebreadoflife.org/security-policy

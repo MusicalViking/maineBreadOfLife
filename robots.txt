@@ -4,6 +4,7 @@
 # Global rules for all bots
 User-agent: *
 Allow: /
+Disallow: /secure/
 
 # Prevent crawling of non-content directories
 Disallow: /assets/vendor/

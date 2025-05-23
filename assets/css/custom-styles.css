@@ -59,39 +59,76 @@ footer .footer-links ul a,
 
 /* Service icon dimensions */
 .service-icon-inline {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
+	width: 48px;
+	height: 48px;
+	flex-shrink: 0;
 }
 
 /* Icon font size */
 .bi-icon-size {
-    font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 /* Social links alignment */
 .social-links-centered {
-    text-align: center;
+	text-align: center;
 }
 
 /* Logo sizing */
 .logo-max-width {
-    max-width: 300px;
+	max-width: 300px;
 }
 
 /* External link indicators */
 a[target="_blank"]::after {
-    content: url("data:image/svg+xml,%3Csvg...");
-    margin-left: 0.3em;
+	content: url("data:image/svg+xml,%3Csvg...");
+	margin-left: 0.3em;
 }
 
 /* Mobile-first media queries */
 @media (max-width: 768px) {
-    .service-icon-inline {
-        width: 40px;
-        height: 40px;
-    }
-    .bi-icon-size {
-        font-size: 1.2rem;
-    }
+	.service-icon-inline {
+		width: 40px;
+		height: 40px;
+	}
+
+	.bi-icon-size {
+		font-size: 1.2rem;
+	}
+}
+
+/* Add to custom-styles.css */
+.policy-container {
+	max-width: 1200px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+.policy-card {
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+	margin-bottom: 1.5rem;
+}
+
+.policy-card-title {
+	color: var(--primary-color);
+	border-bottom: 2px solid var(--accent-color);
+	padding-bottom: 0.75rem;
+	margin-bottom: 1.5rem;
+}
+
+.policy-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.policy-list-item {
+	padding: 0.5rem 0;
+	border-bottom: 1px solid #eee;
+}
+
+.reporting-card {
+	border: 2px solid var(--primary-color);
 }
