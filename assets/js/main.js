@@ -156,7 +156,7 @@
 
     /**
      * Animate the skills items on reveal
-     */
+     
     let skillsAnimation = document.querySelectorAll('.skills-animation');
     skillsAnimation.forEach((item) => {
         new Waypoint({
@@ -170,7 +170,7 @@
             }
         });
     });
-
+    */
     /**
      * Init isotope layout and filters
      */

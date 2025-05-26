@@ -113,39 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Service Page Statistics Animation
-    function animateStats() {
-        const statNumbers = document.querySelectorAll('.stat-number');
-        statNumbers.forEach(stat => {
-            const target = parseInt(stat.textContent);
-            let current = 0;
-            const increment = target / 50;
-
-            const updateCount = () => {
-                if (current < target) {
-                    current += increment;
-                    stat.textContent = current >= target ? target.toLocaleString() : Math.ceil(current).toLocaleString();
-                    requestAnimationFrame(updateCount);
-                }
-            };
-
-            const statsObserver = createScrollObserver(() => updateCount());
-            statsObserver.observe(stat);
-        });
-    }
-
-    // Initialize stats counter
-    const statsSection = document.querySelector('.stats-section');
-    if (statsSection) {
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                animateStats();
-                observer.unobserve(statsSection);
-            }
-        }, { threshold: 0.1 });
-        observer.observe(statsSection);
-    }
-
     // Handle URL parameter messages
     const urlParams = new URLSearchParams(window.location.search);
     const status = urlParams.get('status');

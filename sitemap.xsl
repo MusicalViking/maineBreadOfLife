@@ -1,24 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:output method="html" indent="yes"/>
-  <xsl:template match="/">
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version='1.0' xmlns:xsl='http://www.w3.org/1999/XSL/Transform'>
+  <xsl:output method='html' indent='yes'/>
+  <xsl:template match='/'>
     <html>
       <head>
-        <title>Sitemap - Bread of Life</title>
-        <style>body {font-family: Arial; margin: 2rem} table {width: 100%; border-collapse: collapse} th, td {padding: 8px; text-align: left; border-bottom: 1px solid #ddd}</style>
+        <title>Sitemap - Maine Bread of Life</title>
+        <style>
+          body { font-family: Arial; margin: 2rem }
+          ul { list-style: none; padding: 0 }
+          li { margin: 0.5rem 0 }
+          a { color: #054f87; text-decoration: none }
+          a:hover { text-decoration: underline }
+        </style>
       </head>
       <body>
-        <h1>Website Sitemap</h1>
-        <table>
-          <tr><th>URL</th><th>Last Modified</th><th>Priority</th></tr>
-          <xsl:for-each select="urlset/url">
-            <tr>
-              <td><xsl:value-of select="loc"/></td>
-              <td><xsl:value-of select="lastmod"/></td>
-              <td><xsl:value-of select="priority"/></td>
-            </tr>
+        <h1>Website URLs</h1>
+        <ul>
+          <xsl:for-each select='urlset/url'>
+            <li><a href='{loc}'><xsl:value-of select='loc'/></a></li>
           </xsl:for-each>
-        </table>
+        </ul>
       </body>
     </html>
   </xsl:template>

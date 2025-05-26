@@ -107,6 +107,11 @@ RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
   AddType application/rss+xml .rss
 </IfModule>
 
+# Add XSL MIME type
+<Files "sitemap.xsl">
+    Header set Content-Type "text/xsl"
+</Files>
+
 # HTTP Security Headers
 <IfModule mod_headers.c>
   # Prevent MIME-type sniffing
