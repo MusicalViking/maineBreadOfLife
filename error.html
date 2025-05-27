@@ -175,69 +175,80 @@
 		  "url": "https://mainebreadoflife.org",
 		  "logo": "https://mainebreadoflife.org/assets/img/logo.webp",
 		  "sameAs": [
-			  "https://www.facebook.com/MaineBreadofLife"
+			"https://www.facebook.com/MaineBreadofLife"
 		  ],
 		  "contactPoint": {
-			  "@type": "ContactPoint",
-			  "telephone": "+1-207-626-3434",
-			  "contactType": "Customer Service",
-			  "areaServed": "US",
-			  "availableLanguage": "English"
+			"@type": "ContactPoint",
+			"telephone": "+1-207-626-3434",
+			"contactType": "Customer Service",
+			"areaServed": "US",
+			"availableLanguage": "English"
 		  },
 		  "founder": {
-			  "@type": "Person",
-			  "name": "Carolyn Neighoff"
+			"@type": "Person",
+			"name": "Carolyn Neighoff"
 		  },
-		  "employee": [{
-				  "@type": "Person",
-				  "name": "Victoria Abbott",
-				  "jobTitle": "Executive Director"
-			  }, {
-				  "@type": "Person",
-				  "name": "Laura Briggs",
-				  "jobTitle": "Director of Operations"
-			  }, {
-				  "@type": "Person",
-				  "name": "Arthur Daniel Belanger Jr.",
-				  "jobTitle": "Lead Website Developer",
-				  "worksFor": {
-					  "@type": "Organization",
-					  "name": "Maine Bread of Life",
-					  "url": "https://www.mainebreadoflife.org"
-				  },
-				  "address": {
-					  "@type": "PostalAddress",
-					  "streetAddress": "157 Water Street",
-					  "addressLocality": "Augusta",
-					  "addressRegion": "ME",
-					  "postalCode": "04330",
-					  "addressCountry": "US"
-				  },
-				  "url": "https://www.mainebreadoflife.org"
+		  "employee": [
+			{
+			  "@type": "Person",
+			  "name": "Victoria Abbott",
+			  "jobTitle": "Executive Director"
+			},
+			{
+			  "@type": "Person",
+			  "name": "Laura Briggs",
+			  "jobTitle": "Director of Operations"
+			},
+			{
+			  "@type": "Person",
+			  "name": "Arthur Daniel Belanger Jr.",
+			  "jobTitle": "Lead Website Developer",
+			  "worksFor": {
+				"@type": "Organization",
+				"name": "Maine Bread of Life",
+				"url": "https://www.mainebreadoflife.org"
 			  },
-			  "creator": {
-				  "@type": "Person",
-				  "name": "Arthur Belanger",
-				  "affiliation": {
-					  "@type": "Organization",
-					  "name": "Maine Bread of Life Web Development Team"
-				  }
-			  }
-			  "description": "Bread of Life serves the Augusta, Maine community and veterans through shelters, soup kitchens, and recovery programs."
-		  }
+			  "address": {
+				"@type": "PostalAddress",
+				"streetAddress": "157 Water Street",
+				"addressLocality": "Augusta",
+				"addressRegion": "ME",
+				"postalCode": "04330",
+				"addressCountry": "US"
+			  },
+			  "url": "https://www.mainebreadoflife.org"
+			}
+		  ],
+		  "description": "Bread of Life serves the Augusta, Maine community and veterans through shelters, soup kitchens, and recovery programs."
+		}
 	</script>
 
 	<!-- Error Page Schema -->
 	<script type="application/ld+json">
 		{
 		  "@context": "https://schema.org",
-		  "@type": "ErrorMessage",
-		  "httpStatus": "404",
-		  "name": "Page Not Found",
-		  "description": "The requested page could not be found. Please check the URL or navigate back to our homepage.",
-		  "mainEntityOfPage": {
-			"@type": "WebPage",
-			"@id": "https://mainebreadoflife.org/error.html"
+		  "@type": "HousingProject",
+		  "name": "ART's House - Bread of Life Veterans Housing",
+		  "description": "Transitional and supportive housing for veterans in Augusta, Maine.",
+		  "url": "https://mainebreadoflife.org/arts-house.html",
+		  "image": "https://mainebre adoflife.org/assets/img/arts-house.webp",
+		  "address": {
+			"@type": "PostalAddress",
+			"streetAddress": "157 Water Street",
+			"addressLocality": "Augusta",
+			"addressRegion": "ME",
+			"postalCode": "04330",
+			"addressCountry": "US"
+		  },
+		  "audience": {
+			"@type": "Audience",
+			"audienceType": "Veterans"
+		  },
+		  "telephone": "+1-207-626-3434",
+		  "provider": {
+			"@type": "Organization",
+			"name": "Maine Bread of Life",
+			"url": "https://mainebreadoflife.org"
 		  }
 		}
 	</script>

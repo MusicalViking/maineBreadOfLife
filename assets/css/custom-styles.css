@@ -7,125 +7,100 @@
 
 /* Critical CSS for Bread of Life website */
 :root {
-  --font-default: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-primary: "Poppins", sans-serif;
-  --font-secondary: "Raleway", sans-serif;
-  --color-default: #222222;
-  --color-primary: #0d6efd;
-  --color-secondary: #f85a40;
-  --accent-color: #fd7e14;
-  --heading-color: #054f87;
-  --background-color: #ebf5fb;
-  --header-color: rgba(5, 79, 135, 0.5);
-  --contrast-color: #ffffff;
-  --red-background: #c4101d;
+	--font-default: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-primary: "Poppins", sans-serif;
+	--font-secondary: "Raleway", sans-serif;
+	--color-default: #222222;
+	--color-primary: #0d6efd;
+	--color-secondary: #f85a40;
+	--accent-color: #fd7e14;
+	--heading-color: #054f87;
+	--background-color: #ebf5fb;
+	--header-color: rgba(5, 79, 135, 0.5);
+	--contrast-color: #ffffff;
+	--red-background: #c4101d;
 }
-
-/* Fix for link colors overridden by Bootstrap 
-
-
-/* Preserve specific link styles 
-.navbar a,
-.navbar .navbar-nav .nav-link,
-footer .footer-links ul a,
-.hero a.btn-get-started,
-.social-links a,
-.nav-menu a,
-.nav-item a {
-  color: inherit;
-}*/
 
 .footer-links h4 {
-  color: var(--contrast-color);
+	color: var(--contrast-color);
 }
 
-/* Specific alignment fix for volunteer page 
-.service-details-page .blog-details {
-  padding-bottom: 20px;
-}
-*/
 .service-details-page .sidebar .widgets-container {
-  padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
-/* Fix specific to volunteer.html without changing structure 
-#volunteer-alignment-fix .blog-details,
-#volunteer-alignment-fix .sidebar .widgets-container {
-  margin-bottom: 1rem;
-}
-*/
 /* Service icon dimensions */
 .service-icon-inline {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
+	width: 48px;
+	height: 48px;
+	flex-shrink: 0;
 }
 
 /* Icon font size */
 .bi-icon-size {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 /* Social links alignment */
 .social-links-centered {
-  text-align: center;
+	text-align: center;
 }
 
 /* Logo sizing */
 .logo-max-width {
-  max-width: 300px;
+	max-width: 300px;
 }
 
 /* External link indicators */
 a[target="_blank"]::after {
-  content: url("data:image/svg+xml,%3Csvg...");
-  margin-left: 0.3em;
+	content: url("data:image/svg+xml,%3Csvg...");
+	margin-left: 0.3em;
 }
 
 /* Mobile-first media queries */
 @media (max-width: 768px) {
-  .service-icon-inline {
-    width: 40px;
-    height: 40px;
-  }
+	.service-icon-inline {
+		width: 40px;
+		height: 40px;
+	}
 
-  .bi-icon-size {
-    font-size: 1.2rem;
-  }
+	.bi-icon-size {
+		font-size: 1.2rem;
+	}
 }
 
 /* Add to custom-styles.css */
 .policy-container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+	max-width: 1200px;
+	margin: 2rem auto;
+	padding: 0 1rem;
 }
 
 .policy-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin-bottom: 1.5rem;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+	margin-bottom: 1.5rem;
 }
 
 .policy-card-title {
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 0.75rem;
-  margin-bottom: 1.5rem;
+	color: var(--primary-color);
+	border-bottom: 2px solid var(--accent-color);
+	padding-bottom: 0.75rem;
+	margin-bottom: 1.5rem;
 }
 
 .policy-list {
-  list-style: none;
-  padding-left: 0;
+	list-style: none;
+	padding-left: 0;
 }
 
 .policy-list-item {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid #eee;
 }
 
 .reporting-card {
-  border: 2px solid var(--primary-color);
+	border: 2px solid var(--primary-color);
 }
