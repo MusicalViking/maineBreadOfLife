@@ -1,64 +1,62 @@
 {
-    "workbench.editor.wrapTabs": true,
-    "editor.linkedEditing": true,
-    "workbench.colorCustomizations": {},
-    "python.experiments.enabled": false,
-    "python.insidersChannel": "off",
-    "python.terminal.activateEnvironment": false,
-    "python.venvPath": "",
-    "python.condaPath": "",
-    "python.defaultInterpreterPath": "",
-    "python.languageServer": "Pylance",
-    "python.analysis.openFilesOnly": true,
-    "python.analysis.autoSearchPaths": false,
-    "python.analysis.diagnosticMode": "openFilesOnly",
-    "beautify.config": {
-        "indent_size": 4,
-        "indent_char": " ",
-        "indent_with_tabs": false,
-        "eol": "\r\n",
-        "preserve_newlines": true,
-        "max_preserve_newlines": 2,
-        "wrap_line_length": 0,
-        "wrap_attributes": "auto",
-        "wrap_attributes_indent_size": 4,
-        "unformatted": [
-          "a", "code", "pre", "textarea", 
-          "script", "style", "title"
-        ],
-        "language": {
-          "html": {
-            "indent_handlebars": true,
-            "indent_inner_html": true,
-            "extra_liners": [
-              "head", "body", "/html", "li", "section"
-            ]
-          },
-          "css": {
-            "newline_between_rules": true,
-            "selector_separator_newline": true
-          },
-          "js": {
-            "indent_level": 2,
-            "space_after_anon_function": true
-          }
-        }
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[markdown]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true,
-        "editor.wordWrap": "on"
+  "workbench.editor.wrapTabs": true,
+  "editor.linkedEditing": true,
+  "workbench.colorCustomizations": {},
+  "python.experiments.enabled": false,
+  "python.insidersChannel": "off",
+  "python.terminal.activateEnvironment": false,
+  "python.venvPath": "",
+  "python.condaPath": "",
+  "python.defaultInterpreterPath": "",
+  "python.languageServer": "Pylance",
+  "python.analysis.openFilesOnly": true,
+  "python.analysis.autoSearchPaths": false,
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "beautify.config": {
+    "indent_size": 4,
+    "indent_char": " ",
+    "indent_with_tabs": false,
+    "eol": "\r\n",
+    "preserve_newlines": true,
+    "max_preserve_newlines": 2,
+    "wrap_line_length": 0,
+    "wrap_attributes": "auto",
+    "wrap_attributes_indent_size": 4,
+    "unformatted": ["a", "code", "pre", "textarea", "script", "style", "title"],
+    "language": {
+      "html": {
+        "indent_handlebars": true,
+        "indent_inner_html": true,
+        "extra_liners": ["head", "body", "/html", "li", "section"]
+      },
+      "css": {
+        "newline_between_rules": true,
+        "selector_separator_newline": true
+      },
+      "js": {
+        "indent_level": 2,
+        "space_after_anon_function": true
+      }
     }
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on"
+  },
+  "files.watcherExclude": {
+    "**/target": true
+  }
 }
