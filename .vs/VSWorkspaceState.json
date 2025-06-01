@@ -4,8 +4,9 @@
     "\\assets",
     "\\assets\\css",
     "\\assets\\css\\tests",
-    "\\assets\\js"
+    "\\assets\\js",
+    "\\originals-tests"
   ],
-  "SelectedNode": "\\assets\\css",
+  "SelectedNode": "\\index_accessible.html",
   "PreviewInSolutionExplorer": false
 }

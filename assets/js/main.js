@@ -1,28 +1,16 @@
-/**
- * Arthur Belanger
- * Maine Bread of Life - Augusta, Maine
- **/
-
+/*
+ *  ======================================================================
+ *   MAIN.JS | MAINE BREAD OF LIFE
+ *   AUTHOR: ARTHUR DANIEL BELANGER JR.
+ *  ======================================================================
+*/
 (function () {
 	"use strict";
 
-	/**
-	 * Apply .scrolled class to the body as the page is scrolled down
-	 */
-	function toggleScrolled() {
-		const selectBody = document.querySelector('body');
-		const selectHeader = document.querySelector('#header');
-		if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-		window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
-	}
-
-	document.addEventListener('scroll', toggleScrolled);
-	window.addEventListener('load', toggleScrolled);
-
+	// Toggle 'scrolled' class on header based on scroll position
 	function toggleScrolled() {
 		const header = document.querySelector('.home-header');
 		if (!header) return;
-
 		if (window.scrollY > 50) {
 			header.classList.add('scrolled');
 		} else {
@@ -33,34 +21,27 @@
 	document.addEventListener('scroll', toggleScrolled);
 	window.addEventListener('load', toggleScrolled);
 
-	/**
-	 * Mobile nav toggle
-	 */
+	// Mobile nav toggle
 	const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-	function mobileNavToogle() {
-		document.querySelector('body').classList.toggle('mobile-nav-active');
+	function mobileNavToggle() {
+		document.body.classList.toggle('mobile-nav-active');
 		mobileNavToggleBtn.classList.toggle('bi-list');
 		mobileNavToggleBtn.classList.toggle('bi-x');
 	}
-	mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+	mobileNavToggleBtn?.addEventListener('click', mobileNavToggle);
 
-	/**
-	 * Hide mobile nav on same-page/hash links
-	 */
-	document.querySelectorAll('#navmenu a').forEach(navmenu => {
-		navmenu.addEventListener('click', () => {
-			if (document.querySelector('.mobile-nav-active')) {
-				mobileNavToogle();
+	// Close mobile nav on link click
+	document.querySelectorAll('#navmenu a').forEach(link => {
+		link.addEventListener('click', () => {
+			if (document.body.classList.contains('mobile-nav-active')) {
+				mobileNavToggle();
 			}
 		});
 	});
 
-	/**
-	 * Toggle mobile nav dropdowns
-	 */
-	document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-		navmenu.addEventListener('click', function (e) {
+	// Toggle dropdowns in mobile nav
+	document.querySelectorAll('.navmenu .toggle-dropdown').forEach(toggle => {
+		toggle.addEventListener('click', function (e) {
 			e.preventDefault();
 			this.parentNode.classList.toggle('active');
 			this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -68,40 +49,29 @@
 		});
 	});
 
-	/**
-	 * Preloader
-	 */
+	// Remove preloader on load
 	const preloader = document.querySelector('#preloader');
 	if (preloader) {
-		window.addEventListener('load', () => {
-			preloader.remove();
-		});
+		window.addEventListener('load', () => preloader.remove());
 	}
 
-	/**
-	 * Scroll top button
-	 */
-	let scrollTop = document.querySelector('.scroll-top');
-
+	// Scroll-to-top button
+	const scrollTop = document.querySelector('.scroll-top');
 	function toggleScrollTop() {
 		if (scrollTop) {
-			window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+			scrollTop.classList.toggle('active', window.scrollY > 100);
 		}
 	}
-	scrollTop.addEventListener('click', (e) => {
+
+	scrollTop?.addEventListener('click', (e) => {
 		e.preventDefault();
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth'
-		});
+		window.scrollTo({ top: 0, behavior: 'smooth' });
 	});
 
 	window.addEventListener('load', toggleScrollTop);
 	document.addEventListener('scroll', toggleScrollTop);
 
-	/**
-	 * Animation on scroll function and init
-	 */
+	// Initialize AOS (Animate On Scroll)
 	function aosInit() {
 		AOS.init({
 			duration: 600,
@@ -112,166 +82,198 @@
 	}
 	window.addEventListener('load', aosInit);
 
-	/**
-	 * Auto generate the carousel indicators
-	 */
-	document.querySelectorAll('.carousel-indicators').forEach((carouselIndicator) => {
-		carouselIndicator.closest('.carousel').querySelectorAll('.carousel-item').forEach((carouselItem, index) => {
-			if (index === 0) {
-				carouselIndicator.innerHTML += `<li data-bs-target="#${carouselIndicator.closest('.carousel').id}" data-bs-slide-to="${index}" class="active"></li>`;
-			} else {
-				carouselIndicator.innerHTML += `<li data-bs-target="#${carouselIndicator.closest('.carousel').id}" data-bs-slide-to="${index}"></li>`;
-			}
-		});
-	});
-
-	/**
-	 * Initiate glightbox
-	 */
+	// Initialize GLightbox
 	const glightbox = GLightbox({
 		selector: '.glightbox'
 	});
 
-	/**
-	 * Initiate Pure Counter
-	 */
+	// Initialize PureCounter
 	new PureCounter();
 
-	/**
-	  * Frequently Asked Questions Toggle
-	  */
+	// FAQ toggle functionality
 	document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
 		faqItem.addEventListener('click', () => {
 			faqItem.parentNode.classList.toggle('faq-active');
 		});
 	});
 
-	/**
-	 * Init swiper sliders
-	 */
+	// Initialize Swiper sliders
 	function initSwiper() {
 		document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
-			let config = JSON.parse(
-				swiperElement.querySelector(".swiper-config").innerHTML.trim()
-			);
-
+			let config = JSON.parse(swiperElement.querySelector(".swiper-config").innerHTML.trim());
 			if (swiperElement.classList.contains("swiper-tab")) {
-				initSwiperWithCustomPagination(swiperElement, config);
+				initSwiperWithCustomPagination(swiperElement, config); // Custom pagination logic if needed
 			} else {
 				new Swiper(swiperElement, config);
 			}
 		});
 	}
-
 	window.addEventListener("load", initSwiper);
 
-	/**
-	 * Animate the skills items on reveal
+	// Auto-generate carousel indicators
+	document.querySelectorAll('.carousel-indicators').forEach((carouselIndicator) => {
+		carouselIndicator.closest('.carousel').querySelectorAll('.carousel-item').forEach((item, index) => {
+			const activeClass = index === 0 ? 'class="active"' : '';
+			carouselIndicator.innerHTML += `<li data-bs-target="#${carouselIndicator.closest('.carousel').id}" data-bs-slide-to="${index}" ${activeClass}></li>`;
+		});
+	});
 
-	let skillsAnimation = document.querySelectorAll('.skills-animation');
-	skillsAnimation.forEach((item) => {
-		new Waypoint({
-			element: item,
-			offset: '80%',
-			handler: function (direction) {
-				let progress = item.querySelectorAll('.progress .progress-bar');
-				progress.forEach(el => {
-					el.style.width = el.getAttribute('aria-valuenow') + '%';
-				});
+	// Load CSRF tokens with retry logic
+	function loadCsrfTokens(retryCount = 3) {
+		if (retryCount === 3) {
+			const loadingIndicator = document.getElementById('csrf-loading');
+			if (loadingIndicator) loadingIndicator.style.display = 'inline-block';
+		}
+
+		const baseUrl = window.location.origin;
+		fetch(`${baseUrl}/forms/get_csrf_token.php`, {
+			method: 'GET',
+			cache: 'no-store',
+			credentials: 'same-origin',
+			headers: {
+				'Accept': 'application/json',
+				'X-Requested-With': 'XMLHttpRequest',
+				'X-Requested-By': 'BreadOfLifeForm',
+				'X-CSRF-Request': 'true'
+			}
+		})
+			.then(response => response.json())
+			.then(data => {
+				if (!data.success || !data.token) throw new Error('Invalid CSRF token');
+				document.getElementById('csrf_token')?.setAttribute('value', data.token);
+				document.querySelectorAll('.newsletter-csrf-token').forEach(input => input.value = data.token);
+				document.getElementById('csrf-loading')?.style.setProperty('display', 'none');
+			})
+			.catch(error => {
+				console.error('CSRF Token Error:', error);
+				document.getElementById('csrf-loading')?.style.setProperty('display', 'none');
+				if (retryCount <= 0) {
+					const messageDiv = document.getElementById('form-messages') || document.querySelector('.newsletter-message');
+					if (messageDiv) {
+						messageDiv.innerHTML = `
+            <div class="alert alert-danger">
+              <strong>Security Error:</strong> Unable to load security token.
+              <button onclick="window.location.reload()" class="btn btn-link p-0">Refresh and try again</button>
+            </div>`;
+					}
+				} else {
+					const delay = Math.min(1000 * Math.pow(2, 3 - retryCount), 5000);
+					setTimeout(() => loadCsrfTokens(retryCount - 1), delay);
+				}
+			});
+	}
+
+	// Validate contact form fields
+	function validateContactForm(form) {
+		let isValid = true;
+		const fields = [
+			{ id: 'name', message: 'Please enter your name.' },
+			{ id: 'email', message: 'Please enter a valid email address.' },
+			{ id: 'topic', message: 'Please enter a topic.' },
+			{ id: 'message', message: 'Please enter your message.' }
+		];
+
+		fields.forEach(field => {
+			const input = form.querySelector(`[name="${field.id}"]`);
+			const errorDiv = form.querySelector(`#${field.id}-error`);
+			if (!input.value.trim()) {
+				errorDiv.textContent = field.message;
+				errorDiv.classList.remove('visually-hidden');
+				input.classList.add('is-invalid');
+				isValid = false;
+			} else {
+				errorDiv.textContent = '';
+				errorDiv.classList.add('visually-hidden');
+				input.classList.remove('is-invalid');
 			}
 		});
-	});
-	*/
-	/**
-	 * Init isotope layout and filters
-	 */
-	document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
-		let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-		let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-		let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
-		let initIsotope;
-		imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
-			initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-				itemSelector: '.isotope-item',
-				layoutMode: layout,
-				filter: filter,
-				sortBy: sort
+		return isValid;
+	}
+
+	// Set up form submission handlers
+	function setupFormHandlers() {
+		const contactForm = document.querySelector('form.php-email-form[action$="contact.php"]');
+		if (contactForm) {
+			contactForm.addEventListener('submit', function (e) {
+				if (!validateContactForm(this)) {
+					e.preventDefault();
+					return false;
+				}
+				const messageDiv = document.getElementById('form-messages');
+				if (messageDiv) {
+					messageDiv.innerHTML = '<div class="alert alert-info">Sending message, please wait...</div>';
+				}
+			});
+		}
+
+		const volunteerForm = document.getElementById('volunteerForm');
+		if (volunteerForm) {
+			volunteerForm.addEventListener('submit', function (e) {
+				if (!this.checkValidity()) {
+					e.preventDefault();
+					e.stopPropagation();
+					this.classList.add('was-validated');
+					return false;
+				}
+				const recaptchaResponse = grecaptcha && grecaptcha.getResponse();
+				if (!recaptchaResponse || recaptchaResponse.length === 0) {
+					alert('Please complete the reCAPTCHA verification.');
+					e.preventDefault();
+					return false;
+				}
+				const submitBtn = this.querySelector('button[type="submit"]');
+				submitBtn.disabled = true;
+				submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...';
+			});
+		}
+
+		const newsletterForms = document.querySelectorAll('form.php-email-form[action="forms/newsletter.php"]');
+		newsletterForms.forEach(form => {
+			form.addEventListener('submit', function () {
+				const messageDiv = form.querySelector('.newsletter-message');
+				if (messageDiv) {
+					messageDiv.innerHTML = '<div class="alert alert-info">Processing subscription, please wait...</div>';
+				}
 			});
 		});
-
-		isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
-			filters.addEventListener('click', function () {
-				isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-				this.classList.add('filter-active');
-				initIsotope.arrange({
-					filter: this.getAttribute('data-filter')
-				});
-				if (typeof aosInit === 'function') {
-					aosInit();
-				}
-			}, false);
-		});
-	});
-
-	// Scroll Observer Utility
-	function createScrollObserver(callback, options = { threshold: 0.1 }) {
-		return new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) callback(entry.target);
-			});
-		}, options);
 	}
 
-	// Image Loading Enhancement
-	const MAX_RETRIES = 3;
-	const RETRY_DELAY = 1000;
-
-	function handleImageLoaded(img) {
-		if (imageStatus.has(img)) {
-			imageStatus.delete(img);
-		}
-	}
-
-	function handleImageError(img) {
-		if (!imageStatus.has(img)) return;
-		const status = imageStatus.get(img);
-
-		if (status.retries < MAX_RETRIES) {
-			status.retries++;
-			status.loading = false;
-			setTimeout(() => {
-				if (imageStatus.has(img)) {
-					const cacheBuster = `?retry=${Date.now()}`;
-					const originalSrc = status.src.split('?')[0];
-					img.src = originalSrc + cacheBuster;
-					status.loading = true;
-				}
-			}, RETRY_DELAY * status.retries);
-		} else {
-			console.warn(`Failed to load image after ${MAX_RETRIES} retries: ${img.src}`);
-		}
-	}
-
-	// Initialize image tracking
 	document.addEventListener('DOMContentLoaded', function () {
-		const allImages = document.querySelectorAll('img');
-		const imageStatus = new Map();
+		loadCsrfTokens();
+		setupFormHandlers();
+	});
 
-		allImages.forEach(img => {
-			if (img.complete && img.naturalHeight !== 0) return;
-			imageStatus.set(img, {
-				src: img.src,
-				retries: 0,
-				loading: false
-			});
+	// Show alert messages from URL parameters
+	window.addEventListener('load', function () {
+		const urlParams = new URLSearchParams(window.location.search);
+		const status = urlParams.get('status');
+		const message = urlParams.get('message');
+		if (status && message) {
+			const decodedMessage = decodeURIComponent(message);
+			const alertClass = status === 'success' ? 'alert-success' : 'alert-danger';
+			let messageContainer = document.referrer.includes('contact-us.html')
+				? document.getElementById('form-messages')
+				: document.querySelector('.newsletter-message');
 
-			img.addEventListener('load', () => handleImageLoaded(img));
-			img.addEventListener('error', () => handleImageError(img));
+			if (messageContainer) {
+				messageContainer.innerHTML = `<div class="alert ${alertClass}">${decodedMessage}</div>`;
+				messageContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			}
+		}
+	});
 
-			if (!img.hasAttribute('loading')) {
-				img.setAttribute('loading', 'lazy');
+	// Update file upload label
+	const fileUpload = document.getElementById('file-upload');
+	const fileLabel = document.getElementById('file-label');
+	if (fileUpload && fileLabel) {
+		fileUpload.addEventListener('change', function () {
+			if (this.files.length > 0) {
+				const fileNames = Array.from(this.files).map(file => file.name).join(', ');
+				fileLabel.textContent = fileNames.length > 30 ? fileNames.substring(0, 30) + '...' : fileNames;
+			} else {
+				fileLabel.textContent = 'Attach Files';
 			}
 		});
-	});
-})();
+	};
+})(); // End of consolidated script

@@ -1,3 +1,10 @@
+<!--
+ *  ======================================================================
+ *   CONTACT-US.HTML | MAINE BREAD OF LIFE
+ *   AUTHOR: ARTHUR DANIEL BELANGER JR.
+ *  ======================================================================
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -251,11 +258,11 @@
 
 		<div class="page-title dark-background">
 			<div class="container position-relative">
-				<h1>
+				<h1 role="heading" aria-level="1">
 					Contact Us
 				</h1>
 				<hr />
-				<h3>
+				<h3 role="heading" aria-level="3">
 					We are here if you need any help, please reach out today!
 				</h3>
 				<nav class="breadcrumbs" aria-label="Breadcrumb navigation">
@@ -273,6 +280,7 @@
 		<!-- /P-Title -->
 
 		<section id="contact" class="contact section" aria-labelledby="contact-heading">
+
 			<div class="container">
 				<div class="row gy-4 d-flex align-items-stretch">
 					<div class="col-lg-6 mb-4 mb-lg-0">
@@ -364,12 +372,12 @@
 								<!-- Name -->
 								<div class="row">
 									<div class="col-md-6 form-group">
-										<input name="name" type="text" class="form-control contact-form" placeholder="Your Name" required aria-describedby="name-error">
+										<input name="name" autocomplete="name" type="text" class="form-control contact-form" placeholder="Your Name" required aria-describedby="name-error">
 										<div id="name-error" class="invalid-feedback visually-hidden" aria-live="polite"></div>
 									</div>
 									<!-- Email -->
 									<div class="col-md-6 form-group">
-										<input name="email" type="email" class="form-control contact-form" placeholder="Your Email" required aria-describedby="email-error">
+										<input name="email" autocomplete="email" type="email" class="form-control contact-form" placeholder="Your Email" required aria-describedby="email-error">
 										<div id="email-error" class="invalid-feedback visually-hidden" aria-live="polite"></div>
 									</div>
 								</div>
@@ -383,7 +391,7 @@
 								<!-- Message -->
 								<div class="row">
 									<div class="col form-group">
-										<textarea name="message" class="form-control contact-form" rows="6" placeholder="Message" required aria-describedby="message-error"></textarea>
+										<textarea name="message" autocomplete="off" class="form-control contact-form" rows="6" placeholder="Message" required aria-describedby="message-error"></textarea>
 										<div id="message-error" class="invalid-feedback visually-hidden" aria-live="polite"></div>
 									</div>
 								</div>
@@ -411,298 +419,299 @@
 
 						</section>
 					</div>
-					<!-- /Contact Form -->
+				</div>
+			</div>	<!-- /Contact Form -->
 		</section>
-		</div>
 		<hr />
-		</div>
-		</div>
 		<!-- /Section -->
 		</section>
 		<!-- Services -->
 		<section id="service-details" class="service-details section">
-			<div class="container">
-				<div class="row gy-5">
-					<div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-						<div class="service-box" role="region" aria-labelledby="services-heading">
-							<h4>
-								Our Services
-							</h4>
-							<div class="services-grid row g-4 mt-3">
-								<!-- ART's House -->
-								<div class="col-md-6 col-lg-12" data-aos="fade-up" data-aos-delay="100">
-									<div class="service-card h-100 p-3">
-										<div class="d-flex align-items-center">
-											<div class="service-icon bg-primary bg-gradient text-white rounded-3 p-2 me-3 service-icon-inline">
-												<i class="bi bi-stars bi-icon-size"></i>
-											</div>
-											<div>
-												<h5 class="mb-1">ART's House</h5>
-											</div>
-											<a href="arts-house.html" class="btn btn-sm btn-outline-primary ms-auto" aria-label="Learn more about ART's House program">
-												Learn more <i class="bi bi-arrow-right ms-1"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-
-								<!-- Emergency Shelters -->
-								<div class="col-md-6 col-lg-12" data-aos="fade-up" data-aos-delay="150">
-									<div class="service-card h-100 p-3">
-										<div class="d-flex align-items-center">
-											<div class="service-icon bg-success bg-gradient text-white rounded-3 p-2 me-3" style="width: 3rem; height: 3rem; flex-shrink: 0;">
-												<i class="bi bi-house-door" style="font-size: 1.5rem;"></i>
-											</div>
-											<div>
-												<h5 class="mb-1">Our Shelters</h5>
-											</div>
-											<a href="shelters.html" class="btn btn-sm btn-outline-success ms-auto" aria-label="Learn more about Emergency Shelters">
-												Learn more <i class="bi bi-arrow-right ms-1"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-
-								<!-- Soup Kitchen -->
-								<div class="col-md-6 col-lg-12" data-aos="fade-up" data-aos-delay="200">
-									<div class="service-card h-100 p-3">
-										<div class="d-flex align-items-center">
-											<div class="service-icon bg-warning bg-gradient text-white rounded-3 p-2 me-3" style="width: 3rem; height: 3rem; flex-shrink: 0;">
-												<i class="bi bi-cup-hot-fill" style="font-size: 1.5rem;"></i>
-											</div>
-											<div>
-												<h5 class="mb-1">Soup Kitchen</h5>
-											</div>
-											<a href="soup-kitchen.html" class="btn btn-sm btn-outline-warning ms-auto" aria-label="Learn more about the Soup Kitchen">
-												Learn more <i class="bi bi-arrow-right ms-1"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-
-								<!-- Applications -->
-								<div class="col-md-6 col-lg-12" data-aos="fade-up" data-aos-delay="250">
-									<div class="service-card h-100 p-3">
-										<div class="d-flex align-items-center">
-											<div class="service-icon bg-info bg-gradient text-white rounded-3 p-2 me-3" style="width: 3rem; height: 3rem; flex-shrink: 0;">
-												<i class="bi bi-file-earmark-text" style="font-size: 1.5rem;"></i>
-											</div>
-											<div>
-												<h5 class="mb-1">Apply Now!</h5>
-											</div>
-											<div class="d-flex gap-2 ms-auto">
-												<a href="assets/img/clients/vol_app.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info" aria-label="Download Volunteer Application">
-													<i class="bi bi-download me-1"></i> Volunteer
-												</a>
-												<a href="assets/img/clients/h_app.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info" aria-label="Download Housing Application">
-													<i class="bi bi-download me-1"></i> Housing
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /Services -->
-					</div>
-					<div class="col-lg-7 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
-						<center>
-							<h1 id="services-main-heading" class="sk">
-								Do You Need Shelter?
-							</h1>
-						</center>
-						<h4>
-							<u>
-								What do we need from you?
-							</u>
-						</h4><br />
-						<p class="sh">
-							• Call 626-3434 to complete a shelter pre-intake with a trained staff member.<br /> • Once completed, the shelter manager will call you with any follow up questions or to schedule your arrival to shelter.
-						</p>
-						<h4><u>What to expect and what is included:</u></h4><br />
-						<p class="sh">
-							• You will have your own bed, bedding, and space to store your necessary belongings.<br /> • Separate single male and single female rooms.<br /> • Separate family floor with playroom.<br /> • Free laundry and soaps provided.<br /> • Food donations
-							are available.<br /> • You will have an onsite case manager to help you navigate your roadblocks and reach your goals!
-							<br /> • Ample outdoor space to relax and reset.<br />
-						</p>
-					</div>
-					<hr />
-				</div>
-			</div>
-			<!-- /Services -->
-			<!-- Faq Section -->
-			<section id="faq" class="faq section">
+			<main id="main-content" role="main">
 				<div class="container">
-					<div class="row gy-4">
+					<div class="row gy-5">
 						<div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-							<div class="content px-xl-5">
-								<h3><span>Frequently Asked </span><strong>Questions</strong></h3>
-								<p>
-									Here is a list of our most frequently asked questions at Bread of Life, if the answer you need is not here please vist our contact page and leave us a message, we will get back to you as soon as possible. Thank you for reaching out to the Bread of Life,
-									we want you to be a part of our family.
-								</p>
-							</div>
-						</div>
-
-						<div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-							<div class="faq-container">
-
-								<div class="faq-item faq-active">
-									<h3><span class="num">4.</span> <span>How do I get a voucher?</span></h3>
-									<div class="faq-content">
-										<p><i class="bi bi-house"> </i><a href="https://www.mainehousing.org/" title="Visit Maine Housing" target="_blank" rel="nofollow noreferrer">Maine Housing Website</a></p>
+							<div class="service-box" role="region" aria-labelledby="services-heading">
+								<h4 role="heading" aria-level="4">
+									Our Services
+								</h4>
+								<div class="services-grid row g-4 mt-3">
+									<!-- ART's House -->
+									<div class="col-md-6 col-lg-12" data-aos="fade-up" data-aos-delay="100">
+										<div class="service-card h-100 p-3">
+											<div class="d-flex align-items-center">
+												<div class="service-icon bg-primary bg-gradient text-white rounded-3 p-2 me-3 service-icon-inline">
+													<i class="bi bi-stars bi-icon-size"></i>
+												</div>
+												<div>
+													<h5 class="mb-1">ART's House</h5>
+												</div>
+												<a href="arts-house.html" class="btn btn-sm btn-outline-primary ms-auto" aria-label="Learn more about ART's House program">
+													Learn more <i class="bi bi-arrow-right ms-1"></i>
+												</a>
+											</div>
+										</div>
 									</div>
-									<i class="faq-toggle bi bi-chevron-right"></i>
-								</div>
-								<!-- End Faq item-->
 
-								<div class="faq-item">
-									<h3><span class="num">2.</span> <span>Are you a church?</span></h3>
-									<div class="faq-content">
-										<p>
-											A: We were founded by seven families in Augusta and are a 501(c)3 not for profit.
-										</p>
+									<!-- Emergency Shelters -->
+									<div class="col-md-6 col-lg-12" data-aos="fade-up" data-aos-delay="150">
+										<div class="service-card h-100 p-3">
+											<div class="d-flex align-items-center">
+												<div class="service-icon bg-success bg-gradient text-white rounded-3 p-2 me-3" style="width: 3rem; height: 3rem; flex-shrink: 0;">
+													<i class="bi bi-house-door" style="font-size: 1.5rem;"></i>
+												</div>
+												<div>
+													<h5 class="mb-1">Our Shelters</h5>
+												</div>
+												<a href="shelters.html" class="btn btn-sm btn-outline-success ms-auto" aria-label="Learn more about Emergency Shelters">
+													Learn more <i class="bi bi-arrow-right ms-1"></i>
+												</a>
+											</div>
+										</div>
 									</div>
-									<i class="faq-toggle bi bi-chevron-right"></i>
-								</div>
-								<!-- End Faq item-->
 
-								<div class="faq-item">
-									<h3><span class="num">3.</span> <span>How can I help out or Volunteer?</span></h3>
-									<div class="faq-content">
-										<p>
-											Bread of Life relies on it's community for Volunteers and Donations to be able to help those in need, <a href="volunteer.html" rel="preload" target="_blank">
-												VOLUNTEER
-												TODAY!
-											</a>
-										</p>
+									<!-- Soup Kitchen -->
+									<div class="col-md-6 col-lg-12" data-aos="fade-up" data-aos-delay="200">
+										<div class="service-card h-100 p-3">
+											<div class="d-flex align-items-center">
+												<div class="service-icon bg-warning bg-gradient text-white rounded-3 p-2 me-3" style="width: 3rem; height: 3rem; flex-shrink: 0;">
+													<i class="bi bi-cup-hot-fill" style="font-size: 1.5rem;"></i>
+												</div>
+												<div>
+													<h5 class="mb-1">Soup Kitchen</h5>
+												</div>
+												<a href="soup-kitchen.html" class="btn btn-sm btn-outline-warning ms-auto" aria-label="Learn more about the Soup Kitchen">
+													Learn more <i class="bi bi-arrow-right ms-1"></i>
+												</a>
+											</div>
+										</div>
 									</div>
-									<i class="faq-toggle bi bi-chevron-right"></i>
-								</div>
-								<!-- End Faq item-->
 
-								<div class="faq-item">
-									<h3><span class="num">5.</span> <span>Who do I talk to for an apartment?</span></h3>
-									<div class="faq-content">
-										<p>
-											A: You will talk to Tatiana - housing@mainebreadoflife.org or 626-3434
-										</p>
+									<!-- Applications -->
+									<div class="col-md-6 col-lg-12" data-aos="fade-up" data-aos-delay="250">
+										<div class="service-card h-100 p-3">
+											<div class="d-flex align-items-center">
+												<div class="service-icon bg-info bg-gradient text-white rounded-3 p-2 me-3" style="width: 3rem; height: 3rem; flex-shrink: 0;">
+													<i class="bi bi-file-earmark-text" style="font-size: 1.5rem;"></i>
+												</div>
+												<div>
+													<h5 class="mb-1">Apply Now!</h5>
+												</div>
+												<div class="d-flex gap-2 ms-auto">
+													<a href="assets/img/clients/vol_app.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info" aria-label="Download Volunteer Application">
+														<i class="bi bi-download me-1"></i> Volunteer
+													</a>
+													<a href="assets/img/clients/h_app.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info" aria-label="Download Housing Application">
+														<i class="bi bi-download me-1"></i> Housing
+													</a>
+												</div>
+											</div>
+										</div>
 									</div>
-									<i class="faq-toggle bi bi-chevron-right"></i>
 								</div>
-								<!-- End Faq item-->
-
-								<div class="faq-item">
-									<h3>
-										<span class="num">4.</span> <span>
-											Who do I talk to if I live in one of your
-											apartments and need a new faucet(repairs)?
-										</span>
-									</h3>
-									<div class="faq-content">
-										<p> A: Joe in our facilities department facilities@mainebreadoflife.org</p>
-									</div>
-									<i class="faq-toggle bi bi-chevron-right"></i>
-								</div>
-								<!-- End Faq item-->
-
 							</div>
+							<!-- /Services -->
 						</div>
-					</div>
-					<hr />
-				</div>
-			</section>
-			<!-- /Faq Section -->
-			<!-- Featured Services Section -->
-			<section id="featured-services" class="featured-services section">
-				<div class="container">
-					<div class="row gy-4" data-aos="fade-up">
-						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-							<div class="service-item item-cyan position-relative">
-								<div class="icon">
-									<i class="bi bi-facebook"></i>
-								</div>
-								<a href="https://www.facebook.com/MaineBreadofLife" class="stretched-link" target="_blank" rel="noopener noreferrer">
-									<h3>
-										Facebook
-									</h3>
-								</a>
-								<p>
-									Friend us and stay up to date with the Bread of Life.
-								</p>
-							</div>
+						<div class="col-lg-7 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+							<center>
+								<h1 id="services-main-heading" class="sk">
+									Do You Need Shelter?
+								</h1>
+							</center>
+							<h4 role="heading" aria-level="4">
+								<u>
+									What do we need from you?
+								</u>
+							</h4><br />
+							<p class="sh">
+								• Call 626-3434 to complete a shelter pre-intake with a trained staff member.<br /> • Once completed, the shelter manager will call you with any follow up questions or to schedule your arrival to shelter.
+							</p>
+							<h4 role="heading" aria-level="4"><u>What to expect and what is included:</u></h4><br />
+							<p class="sh">
+								• You will have your own bed, bedding, and space to store your necessary belongings.<br /> • Separate single male and single female rooms.<br /> • Separate family floor with playroom.<br /> • Free laundry and soaps provided.<br /> • Food donations
+								are available.<br /> • You will have an onsite case manager to help you navigate your roadblocks and reach your goals!
+								<br /> • Ample outdoor space to relax and reset.<br />
+							</p>
 						</div>
-						<!-- End Service Item -->
-
-						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-							<div class="service-item item-orange position-relative">
-								<div class="icon">
-									<i class="bi bi-youtube"></i>
-								</div>
-								<a href="https://www.youtube.com/watch?v=UurLrHsNFc4" class="stretched-link" target="_blank" rel="noopener noreferrer">
-									<h3>
-										Youtube
-									</h3>
-								</a>
-								<p>
-									Learn a little more about what we do.
-								</p>
-							</div>
-						</div>
-						<!-- End Service Item -->
-
-						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-							<div class="service-item item-teal position-relative">
-								<div class="icon">
-									<i class="bi bi-instagram"></i>
-								</div>
-								<a href="https://www.instagram.com/mainebreadoflife/" class="stretched-link" target="_blank" rel="noopener noreferrer">
-									<h3>
-										Instagram
-									</h3>
-								</a>
-								<p>
-									Follw us to stay up to date with the Bread of Life.
-								</p>
-							</div>
-						</div>
-						<!-- End Service Item -->
-
-						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-							<div class="service-item item-red position-relative">
-								<div class="icon">
-									<i class="bi bi-paypal"></i>
-								</div>
-								<a href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=PGTFGX7RU4QHQ" class="stretched-link" target="_blank" rel="noopener noreferrer">
-									<h3>
-										Donate or Volunteer
-									</h3>
-								</a>
-								<p>
-									Without your support none of this would be possible.
-								</p>
-							</div>
-						</div>
-						<!-- End Service Item -->
+						<hr />
 					</div>
 				</div>
-			</section>
+				<!-- /Services -->
+				<!-- Faq Section -->
+				<section id="faq" class="faq section">
+					<main id="main-content" role="main">
+						<div class="container">
+							<div class="row gy-4">
+								<div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+									<div class="content px-xl-5">
+										<h3 role="heading" aria-level="3"><span>Frequently Asked </span><strong>Questions</strong></h3>
+										<p>
+											Here is a list of our most frequently asked questions at Bread of Life, if the answer you need is not here please vist our contact page and leave us a message, we will get back to you as soon as possible. Thank you for reaching out to the Bread of Life,
+											we want you to be a part of our family.
+										</p>
+									</div>
+								</div>
 
-			<center>
-				<h3 data-aos="fade-up">
-					Find us here
-				</h3>
-			</center>
-			<div class="mt-5" data-aos="fade-up" data-aos-delay="200">
-				<iframe style="border:0; width: 100%; height: 600px;" src="https://www.google.com/maps/embed/v1/place?q=159+Water+Street,+Augusta,+Maine,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			</div><!-- /Maps -->
+								<div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+									<div class="faq-container">
+
+										<div class="faq-item faq-active">
+											<h3 role="heading" aria-level="3"><span class="num">4.</span> <span>How do I get a voucher?</span></h3>
+											<div class="faq-content">
+												<p><i class="bi bi-house"> </i><a href="https://www.mainehousing.org/" title="Visit Maine Housing" target="_blank" rel="nofollow noreferrer">Maine Housing Website</a></p>
+											</div>
+											<i class="faq-toggle bi bi-chevron-right"></i>
+										</div>
+										<!-- End Faq item-->
+
+										<div class="faq-item">
+											<h3 role="heading" aria-level="3"><span class="num">2.</span> <span>Are you a church?</span></h3>
+											<div class="faq-content">
+												<p>
+													A: We were founded by seven families in Augusta and are a 501(c)3 not for profit.
+												</p>
+											</div>
+											<i class="faq-toggle bi bi-chevron-right"></i>
+										</div>
+										<!-- End Faq item-->
+
+										<div class="faq-item">
+											<h3 role="heading" aria-level="3"><span class="num">3.</span> <span>How can I help out or Volunteer?</span></h3>
+											<div class="faq-content">
+												<p>
+													Bread of Life relies on it's community for Volunteers and Donations to be able to help those in need, <a href="volunteer.html" rel="preload" target="_blank">
+														VOLUNTEER
+														TODAY!
+													</a>
+												</p>
+											</div>
+											<i class="faq-toggle bi bi-chevron-right"></i>
+										</div>
+										<!-- End Faq item-->
+
+										<div class="faq-item">
+											<h3 role="heading" aria-level="3"><span class="num">5.</span> <span>Who do I talk to for an apartment?</span></h3>
+											<div class="faq-content">
+												<p>
+													A: You will talk to Tatiana - housing@mainebreadoflife.org or 626-3434
+												</p>
+											</div>
+											<i class="faq-toggle bi bi-chevron-right"></i>
+										</div>
+										<!-- End Faq item-->
+
+										<div class="faq-item">
+											<h3 role="heading" aria-level="3">
+												<span class="num">4.</span> <span>
+													Who do I talk to if I live in one of your
+													apartments and need a new faucet(repairs)?
+												</span>
+											</h3>
+											<div class="faq-content">
+												<p> A: Joe in our facilities department facilities@mainebreadoflife.org</p>
+											</div>
+											<i class="faq-toggle bi bi-chevron-right"></i>
+										</div>
+										<!-- End Faq item-->
+
+									</div>
+								</div>
+							</div>
+							<hr />
+						</div>
+				</section>
+				<!-- /Faq Section -->
+				<!-- Featured Services Section -->
+				<section id="featured-services" class="featured-services section">
+					<main id="main-content" role="main">
+						<div class="container">
+							<div class="row gy-4" data-aos="fade-up">
+								<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+									<div class="service-item item-cyan position-relative">
+										<div class="icon">
+											<i class="bi bi-facebook"></i>
+										</div>
+										<a href="https://www.facebook.com/MaineBreadofLife" class="stretched-link" target="_blank" rel="noopener noreferrer">
+											<h3 role="heading" aria-level="3">
+												Facebook
+											</h3>
+										</a>
+										<p>
+											Friend us and stay up to date with the Bread of Life.
+										</p>
+									</div>
+								</div>
+								<!-- End Service Item -->
+
+								<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+									<div class="service-item item-orange position-relative">
+										<div class="icon">
+											<i class="bi bi-youtube"></i>
+										</div>
+										<a href="https://www.youtube.com/watch?v=UurLrHsNFc4" class="stretched-link" target="_blank" rel="noopener noreferrer">
+											<h3 role="heading" aria-level="3">
+												Youtube
+											</h3>
+										</a>
+										<p>
+											Learn a little more about what we do.
+										</p>
+									</div>
+								</div>
+								<!-- End Service Item -->
+
+								<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+									<div class="service-item item-teal position-relative">
+										<div class="icon">
+											<i class="bi bi-instagram"></i>
+										</div>
+										<a href="https://www.instagram.com/mainebreadoflife/" class="stretched-link" target="_blank" rel="noopener noreferrer">
+											<h3 role="heading" aria-level="3">
+												Instagram
+											</h3>
+										</a>
+										<p>
+											Follw us to stay up to date with the Bread of Life.
+										</p>
+									</div>
+								</div>
+								<!-- End Service Item -->
+
+								<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+									<div class="service-item item-red position-relative">
+										<div class="icon">
+											<i class="bi bi-paypal"></i>
+										</div>
+										<a href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=PGTFGX7RU4QHQ" class="stretched-link" target="_blank" rel="noopener noreferrer">
+											<h3 role="heading" aria-level="3">
+												Donate or Volunteer
+											</h3>
+										</a>
+										<p>
+											Without your support none of this would be possible.
+										</p>
+									</div>
+								</div>
+								<!-- End Service Item -->
+							</div>
+						</div>
+				</section>
+
+				<center>
+					<h3 data-aos="fade-up">
+						Find us here
+					</h3>
+				</center>
+				<div class="mt-5" data-aos="fade-up" data-aos-delay="200">
+					<iframe style="border:0; width: 100%; height: 600px;" src="https://www.google.com/maps/embed/v1/place?q=159+Water+Street,+Augusta,+Maine,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div><!-- /Maps -->
 		</section>
 
 		<!-- Clients Section -->
 		<section id="clients" class="clients section">
 			<div class="container">
 				<center>
-					<h2>
+					<h2 role="heading" aria-level="2">
 						Our Partners
 					</h2>
 				</center>
@@ -769,7 +778,7 @@
 				</div>
 
 			</div>
-
+		</section>
 	</main>
 
 	</section>
@@ -780,9 +789,9 @@
 			<div class="row gy-4">
 				<div class="col-lg-4 col-md-6 footer-about">
 					<span class="sitename">
-						<h4>
+						<h3 role="heading" aria-level="4">
 							Bread Of Life
-						</h4>
+						</h3>
 					</span>
 					<div class="footer-contact pt-3">
 						<p>
@@ -803,7 +812,7 @@
 						</p>
 						<hr />
 						<span class="sitename">
-							<h4>
+							<h4 role="heading" aria-level="4">
 								Board of Directors
 							</h4>
 						</span>
@@ -822,7 +831,7 @@
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-3 footer-links">
-					<h4>
+					<h4 role="heading" aria-level="4">
 						Our Partners
 					</h4>
 					<ul>
@@ -838,7 +847,7 @@
 					</ul>
 				</div>
 				<div class="col-lg-2 col-md-3 footer-links">
-					<h4>
+					<h4 role="heading" aria-level="4">
 						Our Services
 					</h4>
 					<ul>

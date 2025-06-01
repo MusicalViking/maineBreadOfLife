@@ -31,8 +31,7 @@ Allow: /assets/img/
 
 # Add your XML sitemap location
 Sitemap: https://mainebreadoflife.org/sitemap.xml
-Sitemap: https://mainebreadoflife.org/feed.rss
-
+Sitemap: https://mainebreadoflife.org/feed.php
 
 <div>
 										<center>
