@@ -15,13 +15,22 @@ if (file_exists(__DIR__ . '/.env')) {
     }
 }
 
-// Define constants
+// Define constants from environment
 define('BREAD_OF_LIFE_LOADED', true);
 define('SMTP_HOST', getenv('SMTP_HOST'));
 define('SMTP_PORT', getenv('SMTP_PORT'));
 define('SMTP_USERNAME', getenv('SMTP_USERNAME'));
 define('SMTP_PASSWORD', getenv('SMTP_PASSWORD'));
 define('RECAPTCHA_SECRET_KEY', getenv('RECAPTCHA_SECRET_KEY'));
+define('SITE_DOMAIN', getenv('SITE_DOMAIN') ?: 'mainebreadoflife.org');
+define('APP_ENV', getenv('APP_ENV') ?: 'production');
+
+// Validate critical environment variables
+if (!SMTP_HOST || !SMTP_USERNAME || !SMTP_PASSWORD) {
+    error_log("Missing SMTP configuration in environment.");
+    http_response_code(500);
+    exit("Server configuration error.");
+}
 
 // Session configuration
 ini_set('session.cookie_httponly', 1);
@@ -32,7 +41,7 @@ ini_set('session.gc_maxlifetime', 1800);
 
 // Error handling
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
-ini_set('display_errors', 0);
+ini_set('display_errors', APP_ENV === 'development' ? 1 : 0);
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/../logs/error.log');
 
