@@ -34,7 +34,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
         <generator>Dynamic RSS Generator</generator>
         <?php foreach ($items as $item): ?>
         <item>
-            <title><?= htmlspecialchars($item['title']) ?></title>
+            <title><?= htmlspecialchars($item['title'], ENT_XML1, 'UTF-8') ?></title>
             <link><?= $base_url . $item['link'] ?></link>
             <guid><?= $base_url . $item['link'] ?></guid>
             <pubDate><?= date(DATE_RSS, $item['pubDate']) ?></pubDate>

@@ -1,55 +1,34 @@
- #  ======================================================================
- #  ARTS-HOUSE.HTML | MAINE BREAD OF LIFE
- #   AUTHOR: ARTHUR DANIEL BELANGER JR.
- #	 Email: arthur.belanger@maine.edu
- #   https://github.com/MusicalViking/maineBreadOfLife
- #  ======================================================================
- 
-# Maine Bread of Life Website Robots Configuration
-# Updated: May 15, 2025
+# ======================================================================
+# ROBOTS.TXT | MAINE BREAD OF LIFE
+# AUTHOR: Arthur Daniel Belanger Jr.
+# https://github.com/MusicalViking/maineBreadOfLife
+# Updated: June 7, 2025
+# ======================================================================
 
-# Global rules for all bots
+# ----- Global Rules for All Bots -----
 User-agent: *
-Allow: /
 Disallow: /secure/
-
-# Prevent crawling of non-content directories
 Disallow: /assets/vendor/
 Disallow: /forms/
 Disallow: /forms/uploads/
 Disallow: /assets/js/
 Disallow: /*.php$
-
-# Prevent indexing of administrative or duplicate content
 Disallow: /*?*
 
-# Allow critical CSS/JS
+# Allow Critical CSS/JS for Rendering
 Allow: /assets/css/main.css
 Allow: /assets/css/custom-styles.css
 Allow: /assets/css/all.min.css
 Allow: /assets/js/all.min.js
+Allow: /assets/js/main.min.js
 
-# Social Media Bots Customization
+# ----- Social Media Bots -----
 User-agent: Twitterbot
 Allow: /assets/img/
 
 User-agent: facebookexternalhit
 Allow: /assets/img/
 
-# Add your XML sitemap location
+# ----- XML Sitemap Locations -----
 Sitemap: https://mainebreadoflife.org/sitemap.xml
 Sitemap: https://mainebreadoflife.org/feed.php
-
-<div>
-										<center>
-											<h3>
-												Board of Directors
-											</h3>
-											<p>
-												Our board of directors is a governing body of this 501c3 organization. If you have an interest in serving, please reach out to
-												<a href="contact-us.html" title="Go to contacts page" target="_blank">
-													directors@mainebreadoflife.org
-												</a><br />to learn more.
-											</p>
-										</center>
-									</div>
