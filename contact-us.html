@@ -230,7 +230,7 @@
 		window.dataLayer = window.dataLayer || [];
 
 		function gtag() {
-		  dataLayer.push(arguments);
+			dataLayer.push(arguments);
 		}
 		gtag("js", new Date());
 
@@ -241,7 +241,8 @@
 <body class="service-details-page">
 	<header role="banner" id="header" class="header d-flex align-items-center fixed-top" aria-label="Main header">
 		<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-			<a href="https://mainebreadoflife.org" class="logo d-flex align-items-center" aria-label="Bread of Life Home">
+			<a href="https://mainebreadoflife.org" class="logo d-flex align-items-center"
+			   aria-label="Bread of Life Home">
 				<img src="assets/img/bolw.webp" alt="Bread of Life Logo" title="Back To Home Page" />
 			</a>
 			<nav role="navigation" id="navmenu" class="navmenu" aria-label="Primary navigation">
@@ -277,7 +278,8 @@
 						   title=" Be a part of our Instagram family"><i class="bi bi-instagram"></i></a>
 					</li>
 					<li role="menuitem">
-						<a href="https://www.facebook.com/MaineBreadofLife" target="_blank" title="Follow us on Facebook">
+						<a href="https://www.facebook.com/MaineBreadofLife" target="_blank"
+						   title="Follow us on Facebook">
 							<i class="bi bi-facebook"></i>
 						</a>
 					</li>
@@ -314,11 +316,13 @@
 			<div class="container">
 				<div class="row gy-4 d-flex align-items-stretch">
 					<div class="col-lg-6 mb-4 mb-lg-0">
-						<div class="contact-info-container d-flex flex-column" role="region" aria-labelledby="contact-info-heading">
+						<div class="contact-info-container d-flex flex-column" role="region"
+							 aria-labelledby="contact-info-heading">
 							<div class="row gy-4 flex-grow-1">
 								<div class="col-lg-12">
 									<div class="info-item d-flex flex-column justify-content-center align-items-center h-100"
-										 data-aos="fade-up" data-aos-delay="200" role="region" aria-labelledby="address-heading">
+										 data-aos="fade-up" data-aos-delay="200" role="region"
+										 aria-labelledby="address-heading">
 										<i class="bi bi-geo-alt" aria-hidden="true" aria-label="Address Icon"></i>
 										<h3 id="address-heading">Addresses</h3>
 										<p>
@@ -355,8 +359,9 @@
 								<!-- /Item -->
 
 								<div class="col-md-6">
-									<div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
-										 data-aos-delay="300" role="region" aria-labelledby="phone-heading">
+									<div class="info-item d-flex flex-column justify-content-center align-items-center"
+										 data-aos="fade-up" data-aos-delay="300" role="region"
+										 aria-labelledby="phone-heading">
 										<i class="bi bi-telephone" aria-hidden="true"></i>
 										<h3 id="phone-heading">Call Today</h3>
 										<p>(207) 626-3434</p>
@@ -365,8 +370,9 @@
 								<!-- /Item -->
 
 								<div class="col-md-6">
-									<div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
-										 data-aos-delay="400" role="region" aria-labelledby="email-heading">
+									<div class="info-item d-flex flex-column justify-content-center align-items-center"
+										 data-aos="fade-up" data-aos-delay="400" role="region"
+										 aria-labelledby="email-heading">
 										<i class="bi bi-envelope" aria-hidden="true"></i>
 										<h3 id="email-heading">Save our email</h3>
 										<p>receptionist@mainebreadoflife.org</p>
@@ -380,91 +386,76 @@
 					<!-- Contact Form -->
 					<div class="col-lg-6 mb-4 mb-lg-0">
 						<section id="contact-form" class="comment-form section">
-							<form id="contactForm"
-								  action="https://formsubmit.co/a823ddc1dcecd5973a4dd020a84797e0"
-								  method="POST"
-								  enctype="multipart/form-data"
-								  class="needs-validation"
-								  novalidate
-								  aria-labelledby="contact-heading">
-
-								<!-- Hidden Config for FormSubmit -->
+							<form id="contactForm" action="https://formsubmit.co/a823ddc1dcecd5973a4dd020a84797e0"
+								  method="POST" enctype="multipart/form-data">
+								<!-- FormSubmit Configuration -->
 								<input type="hidden" name="_captcha" value="false">
-								<input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+								<input type="hidden" name="_next" value="https://mainebreadoflife.org/thank-you.html">
+								<input type="hidden" name="_subject" value="New Contact Form Submission">
 								<input type="text" name="_honey" style="display:none">
 
 								<h4 id="contact-heading"><u>Contact Us Today</u></h4>
 								<p>
 									<em>
-										This is a confidential way to contact us. Please submit
-										applications on our site here.
-									</em><br />
-									<strong>All Fields Required</strong>
+										We'd love to hear from you! Whether you're reaching out for help, to volunteer,
+										or to get
+										involved, connecting with Bread of Life means becoming part of a community that
+										cares.
+									</em>
 								</p>
 
 								<!-- Name -->
-								<div class="row">
-									<div class="col-md-6 form-group">
-										<input name="name" autocomplete="name" type="text" class="form-control contact-form"
-											   placeholder="Your Name" required aria-describedby="name-error" />
-										<div id="name-error" class="invalid-feedback visually-hidden" aria-live="polite"></div>
+								<div class="row mb-3">
+									<div class="col-md-6 mb-3">
+										<label for="name" class="form-label">Your Name</label>
+										<input type="text" class="form-control" id="name" name="name" required>
 									</div>
 
 									<!-- Email -->
-									<div class="col-md-6 form-group">
-										<input name="email" autocomplete="email" type="email" class="form-control contact-form"
-											   placeholder="Your Email" required aria-describedby="email-error" />
-										<div id="email-error" class="invalid-feedback visually-hidden" aria-live="polite"></div>
+									<div class="col-md-6 mb-3">
+										<label for="email" class="form-label">Your Email</label>
+										<input type="email" class="form-control" id="email" name="email" required>
 									</div>
 								</div>
 
 								<!-- Topic -->
-								<div class="row">
-									<div class="col form-group">
-										<input name="topic" type="text" class="form-control contact-form" placeholder="Topic" required
-											   aria-describedby="topic-error" />
-										<div id="topic-error" class="invalid-feedback visually-hidden" aria-live="polite"></div>
-									</div>
+								<div class="mb-3">
+									<label for="topic" class="form-label">Subject</label>
+									<input type="text" class="form-control" id="topic" name="topic" required>
 								</div>
 
 								<!-- Message -->
-								<div class="row">
-									<div class="col form-group">
-										<textarea name="message" autocomplete="off" class="form-control contact-form" rows="6"
-												  placeholder="Message" required aria-describedby="message-error"></textarea>
-										<div id="message-error" class="invalid-feedback visually-hidden" aria-live="polite"></div>
-									</div>
+								<div class="mb-3">
+									<label for="message" class="form-label">Your Message</label>
+									<textarea class="form-control" id="message" name="message" rows="4"
+											  required></textarea>
 								</div>
 
 								<!-- File Upload -->
 								<div class="row">
 									<div class="text-center">
 										<label for="file-upload" class="btn btn-primary file-upload-btn">
-											Attach Files (PDF, DOC, JPG, etc.)
+											Attach Files
+											(Optional)
 										</label>
-										<input id="file-upload" name="attachment[]" type="file" multiple class="d-none"
-											   aria-describedby="file-description" />
-										<small id="file-description" class="d-block mt-2 text-muted">
-											Max size: 5MB. Formats: PDF, DOC, ZIP, JPG, etc.
-										</small>
+										<input type="file" class="form-control" id="file-upload" name="attachment[]"
+											   multiple>
+										<div class="form-text">Max size: 5MB. Formats: PDF, DOC, ZIP, JPG, etc.</div>
 									</div>
 								</div>
 
-								<!-- Submit -->
-								<div class="text-center mt-3">
-									<button type="submit" class="btn btn-primary">
-										Send Message
+								<!-- Submit Button -->
+								<div class="text-center mt-4">
+									<button type="submit" class="btn btn-primary btn-lg">
+										<i class="bi bi-send me-2"></i>Send Message
 									</button>
 								</div>
-
-								<!-- Optional JS Feedback Placeholder -->
-								<div id="form-messages" class="mt-3" aria-live="polite"></div>
 							</form>
 						</section>
 					</div>
-
+				</div>
+			</div>
 		</section>
-
 		<!-- /Section -->
 		<!-- Services -->
 		<section id="service-details" class="service-details section">
@@ -542,12 +533,14 @@
 												<h5 class="mb-1">Apply Now!</h5>
 											</div>
 											<div class="d-flex gap-2 ms-auto">
-												<a href="assets/img/clients/vol_app.pdf" target="_blank" rel="noopener noreferrer"
-												   class="btn btn-sm btn-outline-info" aria-label="Download Volunteer Application">
+												<a href="assets/img/clients/vol_app.pdf" target="_blank"
+												   rel="noopener noreferrer" class="btn btn-sm btn-outline-info"
+												   aria-label="Download Volunteer Application">
 													<i class="bi bi-download me-1"></i> Volunteer
 												</a>
-												<a href="assets/img/clients/h_app.pdf" target="_blank" rel="noopener noreferrer"
-												   class="btn btn-sm btn-outline-info" aria-label="Download Housing Application">
+												<a href="assets/img/clients/h_app.pdf" target="_blank"
+												   rel="noopener noreferrer" class="btn btn-sm btn-outline-info"
+												   aria-label="Download Housing Application">
 													<i class="bi bi-download me-1"></i> Housing
 												</a>
 											</div>
@@ -622,8 +615,12 @@
 								</h3>
 								<div class="faq-content">
 									<p>
-										<i class="bi bi-house"> </i><a href="https://www.mainehousing.org/" title="Visit Maine Housing"
-										 target="_blank" rel="nofollow noreferrer">Maine Housing Website</a>
+										<i class="bi bi-house"> </i><a href="https://www.mainehousing.org/"
+										 title="Visit Maine Housing" target="_blank" rel="nofollow noreferrer">
+											Maine
+											Housing
+											Website
+										</a>
 									</p>
 								</div>
 								<i class="faq-toggle bi bi-chevron-right"></i>
@@ -805,14 +802,15 @@
 					<div class="swiper-wrapper align-items-center">
 						<div class="swiper-slide">
 							<a href="https://www.augustamaine.com/" target="_blank" rel="noopener noreferrer">
-								<img src="assets/img/clients/kvch.webp" id="partners" alt="Kennebec Valley Chamber of Commerce"
-									 loading="lazy" title="Kennebec Valley Chamber of Commerce" />
+								<img src="assets/img/clients/kvch.webp" id="partners"
+									 alt="Kennebec Valley Chamber of Commerce" loading="lazy"
+									 title="Kennebec Valley Chamber of Commerce" />
 							</a>
 						</div>
 						<div class="swiper-slide">
 							<a href="https://joingroups.com/" target="_blank" rel="noopener noreferrer">
-								<img src="assets/img/clients/grp.webp" id="partners" alt="Groups Recover together" loading="lazy"
-									 title="Groups Recover together" />
+								<img src="assets/img/clients/grp.webp" id="partners" alt="Groups Recover together"
+									 loading="lazy" title="Groups Recover together" />
 							</a>
 						</div>
 						<div class="swiper-slide">
@@ -823,31 +821,32 @@
 						</div>
 						<div class="swiper-slide">
 							<a href="https://www.gsfb.org/" target="_blank" rel="noopener noreferrer">
-								<img src="assets/img/clients/gs.webp" id="partners" alt="Good Shepherd Food Bank" loading="lazy"
-									 title="Good Shepherd Food Bank" />
+								<img src="assets/img/clients/gs.webp" id="partners" alt="Good Shepherd Food Bank"
+									 loading="lazy" title="Good Shepherd Food Bank" />
 							</a>
 						</div>
 						<div class="swiper-slide">
 							<a href="https://augustaelks.org/" target="_blank" rel="noopener noreferrer">
-								<img src="assets/img/clients/elk.webp" id="partners" alt="Augusta Elks Lodge" loading="lazy"
-									 title="Augusta Elks Lodge" />
+								<img src="assets/img/clients/elk.webp" id="partners" alt="Augusta Elks Lodge"
+									 loading="lazy" title="Augusta Elks Lodge" />
 							</a>
 						</div>
 						<div class="swiper-slide">
 							<a href="https://portal.clubrunner.ca/522" target="_blank" rel="noopener noreferrer">
-								<img src="assets/img/clients/rotary.webp" id="partners" alt="Rotary International" loading="lazy"
-									 title="Rotary International" />
+								<img src="assets/img/clients/rotary.webp" id="partners" alt="Rotary International"
+									 loading="lazy" title="Rotary International" />
 							</a>
 						</div>
 						<div class="swiper-slide">
 							<a href="https://www.core-mark.com/" target="_blank" rel="noopener noreferrer">
-								<img src="assets/img/clients/cm.webp" id="partners" alt="Core-Mark" loading="lazy" title="Core-Mark" />
+								<img src="assets/img/clients/cm.webp" id="partners" alt="Core-Mark" loading="lazy"
+									 title="Core-Mark" />
 							</a>
 						</div>
 						<div class="swiper-slide">
 							<a href="https://www.performancefoodservice.com/" target="_blank" rel="noopener noreferrer">
-								<img src="assets/img/clients/pf.webp" id="partners" alt="Performance Food Service" loading="lazy"
-									 title="Performance Food Service" />
+								<img src="assets/img/clients/pf.webp" id="partners" alt="Performance Food Service"
+									 loading="lazy" title="Performance Food Service" />
 							</a>
 						</div>
 					</div>
@@ -896,7 +895,8 @@
 					<ul>
 						<li>
 							<i class="bi bi-people"></i>
-							<a href="https://joingroups.com/" target="_blank" rel="noopener noreferrer" title="Visit Site">
+							<a href="https://joingroups.com/" target="_blank" rel="noopener noreferrer"
+							   title="Visit Site">
 								Groups
 								Recover Together
 							</a>
@@ -910,14 +910,16 @@
 						</li>
 						<li>
 							<i class="bi bi-people"></i>
-							<a href="https://www.gsfb.org/" target="_blank" rel="noopener noreferrer" title="Visit Site">
+							<a href="https://www.gsfb.org/" target="_blank" rel="noopener noreferrer"
+							   title="Visit Site">
 								Good Shepherd
 								Food Bank
 							</a>
 						</li>
 						<li>
 							<i class="bi bi-people"></i>
-							<a href="https://augustaelks.org/" target="_blank" rel="noopener noreferrer" title="Visit Site">
+							<a href="https://augustaelks.org/" target="_blank" rel="noopener noreferrer"
+							   title="Visit Site">
 								Augusta
 								Elks Club
 							</a>
@@ -969,8 +971,8 @@
 							</a>
 						</li>
 						<li>
-							<a href="./assets/img/clients/vol_app.pdf" download target="_blank" rel="noopener noreferrer"
-							   title="Open Volunteer Application Form">
+							<a href="./assets/img/clients/vol_app.pdf" download target="_blank"
+							   rel="noopener noreferrer" title="Open Volunteer Application Form">
 								<i class="bi bi-file-pdf"></i><span> Volunteer Application </span>
 							</a>
 						</li>
@@ -993,16 +995,24 @@
 					<hr />
 					<div class="social-links social-links-centered">
 						<center>
-							<a href="https://www.facebook.com/MaineBreadofLife" target="_blank" rel="noopener noreferrer"
-							   title="Bread Of Life Facebook Page"><i class="bi bi-facebook"></i></a>
-							<a href="https://www.instagram.com/mainebreadoflife/" target="_blank" rel="noopener noreferrer"
-							   title="Bread Of Life Instagram"><i class="bi bi-instagram"></i></a>
-							<a href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=PGTFGX7RU4QHQ">
-								<i class="bi bi-paypal" target="_blank" rel="noopener noreferrer" title="Bread Of Life PayPal"></i>
+							<a href="https://www.facebook.com/MaineBreadofLife" target="_blank"
+							   rel="noopener noreferrer" title="Bread Of Life Facebook Page">
+								<i class="bi bi-facebook"></i>
 							</a>
-							<a href="https://www.youtube.com/@HousingMattersPod" target="_blank" rel="noopener noreferrer"
-							   title="Housing Matters Podcast"><i class="bi bi-youtube"></i></a>
-							<a href="/feed.php" class="rss-link" title="Subscribe via RSS" aria-label="Subscribe via RSS feed">
+							<a href="https://www.instagram.com/mainebreadoflife/" target="_blank"
+							   rel="noopener noreferrer" title="Bread Of Life Instagram">
+								<i class="bi bi-instagram"></i>
+							</a>
+							<a href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=PGTFGX7RU4QHQ">
+								<i class="bi bi-paypal" target="_blank" rel="noopener noreferrer"
+								   title="Bread Of Life PayPal"></i>
+							</a>
+							<a href="https://www.youtube.com/@HousingMattersPod" target="_blank"
+							   rel="noopener noreferrer" title="Housing Matters Podcast">
+								<i class="bi bi-youtube"></i>
+							</a>
+							<a href="/feed.php" class="rss-link" title="Subscribe via RSS"
+							   aria-label="Subscribe via RSS feed">
 								<i class="bi bi-rss"></i>
 							</a>
 						</center>
@@ -1017,8 +1027,8 @@
 			<div class="credits">
 				<p>
 					Site developed and donated by
-					<a href="https://github.com/MusicalViking/maineBreadOfLife" target="_blank" rel="noopener noreferrer"
-					   title="Visit MusicalViking on Github for raw code.">
+					<a href="https://github.com/MusicalViking/maineBreadOfLife" target="_blank"
+					   rel="noopener noreferrer" title="Visit Github for raw code.">
 						Arthur (Volunteer Developer).
 					</a>
 				</p>
@@ -1030,12 +1040,13 @@
 					</a>.
 				</p>
 				<p>
-					<a href="privacy-conduct.html" target="_blank" title="Privacy & Conduct Policies">
+					<a href="privacy-conduct.html" title="Privacy & Conduct Policies">
 						Privacy &
 						Conduct
 					</a>
 					|
-					<a href="/LICENSE" title="MIT License"> MIT License</a>
+					<a href="https://github.com/MusicalViking/License/blob/main/Belanger%20Non-commercial%20Open%20License(BNOL%20v1.0).md"
+					   title="MIT License" target="_blank"> MIT License</a>
 				</p>
 			</div>
 		</div>

@@ -69,16 +69,24 @@ Bread of Life is a community outreach program based in Augusta, Maine, dedicated
 ## 🏗️ Project Structure
 
 ```
-├── assets/               # Static assets (images, fonts, etc.)
-├── config/               # Configuration files
-├── forms/                # Form processing scripts
-├── secure/               # Secure/private files
-├── index.html            # Homepage
-├── services.html         # Services page
-├── volunteer.html        # Volunteer information
-├── contact-us.html       # Contact page
-├── package.json          # Project configuration
-└── README.md            # This file
+├── assets/               # Static assets
+│   ├── css/             # Compiled CSS files
+│   ├── img/             # Image assets
+│   ├── js/              # JavaScript files
+│   ├── mp4/             # Video assets
+│   └── vendor/          # Third-party libraries
+├── images/              # Additional images (including README assets)
+├── arts-house.html      # ART's House information
+├── contact-us.html      # Contact page
+├── error.html           # Custom error page
+├── index.html           # Homepage
+├── privacy-conduct.html # Privacy and conduct policies
+├── services.html        # Services overview
+├── shelters.html        # Shelter information
+├── soup-kitchen.html    # Soup kitchen details
+├── thank-you.html       # Form submission confirmation
+├── volunteer.html       # Volunteer information
+└── README.md           # This file
 ```
 
 ## 🤝 Contributing
