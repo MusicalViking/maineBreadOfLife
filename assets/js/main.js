@@ -6,17 +6,13 @@
  *  ======================================================================
  */
 (function () {
-  ("use strict");
+  "use strict";
 
   // Toggle 'scrolled' class on header based on scroll position
   function toggleScrolled() {
     const header = document.querySelector(".home-header");
     if (!header) return;
-    if (window.scrollY > 50) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
+    header.classList.toggle("scrolled", window.scrollY > 50);
   }
 
   document.addEventListener("scroll", toggleScrolled);
@@ -26,8 +22,10 @@
   const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
   function mobileNavToggle() {
     document.body.classList.toggle("mobile-nav-active");
-    mobileNavToggleBtn.classList.toggle("bi-list");
-    mobileNavToggleBtn.classList.toggle("bi-x");
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.classList.toggle("bi-list");
+      mobileNavToggleBtn.classList.toggle("bi-x");
+    }
   }
   mobileNavToggleBtn?.addEventListener("click", mobileNavToggle);
 
@@ -44,8 +42,10 @@
   document.querySelectorAll(".navmenu .toggle-dropdown").forEach((toggle) => {
     toggle.addEventListener("click", function (e) {
       e.preventDefault();
-      this.parentNode.classList.toggle("active");
-      this.parentNode.nextElementSibling.classList.toggle("dropdown-active");
+      const parent = this.parentNode;
+      const sibling = parent?.nextElementSibling;
+      parent?.classList.toggle("active");
+      sibling?.classList.toggle("dropdown-active");
       e.stopImmediatePropagation();
     });
   });
@@ -94,7 +94,7 @@
     .querySelectorAll(".faq-item h3, .faq-item .faq-toggle")
     .forEach((faqItem) => {
       faqItem.addEventListener("click", () => {
-        faqItem.parentNode.classList.toggle("faq-active");
+        faqItem.parentNode?.classList.toggle("faq-active");
       });
     });
 
@@ -104,10 +104,14 @@
       document
         .querySelectorAll(".init-swiper")
         .forEach(function (swiperElement) {
-          let config = JSON.parse(
-            swiperElement.querySelector(".swiper-config").textContent.trim()
-          );
-          new Swiper(swiperElement, config);
+          try {
+            const configElement = swiperElement.querySelector(".swiper-config");
+            if (!configElement) return;
+            let config = JSON.parse(configElement.textContent.trim());
+            new Swiper(swiperElement, config);
+          } catch (err) {
+            console.error("Swiper initialization failed:", err);
+          }
         });
     }
     window.addEventListener("load", initSwiper);
@@ -146,4 +150,30 @@
       }
     });
   }
+
+  // Handle form submissions
+  document.querySelectorAll('form[action*="formsubmit.co"]').forEach(form => {
+    form.addEventListener('submit', function(event) {
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn?.innerHTML;
+      
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+      }
+      
+      // Let the form submit naturally to FormSubmit
+      // The form will be handled by the browser's default behavior
+      // since we're not calling event.preventDefault()
+      
+      // Reset the button after a delay in case submission fails
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
+      }, 10000); // Reset after 10 seconds if still on the page
+    });
+  });
 })();
