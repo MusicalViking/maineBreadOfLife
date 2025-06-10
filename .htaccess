@@ -1,54 +1,97 @@
-# ============================================================================
+# ===================================================================
+# .htaccess | Final Version for GoDaddy Hosting
+# Author: Arthur Daniel Belanger Jr.
+# Purpose: Secure, simple, and user-friendly for nonprofit website
+# ===================================================================
 
-# .HTACCESS | Optimized for GoDaddy Hosting
+# Enable mod_rewrite if available
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
 
-# Author: Arthur Daniel Belanger Jr. | https://github.com/MusicalViking/
+    # 1. Force HTTPS (handles GoDaddy proxy headers)
+  #  RewriteCond %{HTTPS} off [OR]
+  #  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  #  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# ============================================================================
+    # 2. Remove www (canonical domain without www)
+  #  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  #  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
-# Enable rewrite engine and set base
+    # 3. Block common malicious query strings
+    RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+    RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule ^ - [F,L]
 
-RewriteEngine On
-RewriteBase /
+    # 4. Clean URLs: serve .html files without extension and add trailing slash
 
-# Force HTTPS and non-www (GoDaddy specific)
+    # If not a directory and .html file exists, serve it transparently
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.+?)/?$ $1.html [L]
 
-RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    # Redirect direct .html requests to clean URL with trailing slash
+    RewriteCond %{THE_REQUEST} \s([^\s]+)\.html[\s?] [NC]
+    RewriteRule ^ %1/ [R=301,L]
 
-# Remove www (if present)
+    # Add trailing slash if missing and not a file or directory
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+    RewriteRule ^(.*)$ $1/ [R=301,L]
 
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+    # Fix URLs leaking full server path (if still needed)
+  #  RewriteCond %{REQUEST_URI} ^/home/[^/]+/public_html/(.*)$ [NC]
+  #  RewriteRule ^ /%1 [R=301,L]
 
-# Remove .html extension and add trailing slash
+</IfModule>
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
-
-# Redirect direct .html requests to clean URL
-
-RewriteCond %{THE_REQUEST} \.html[\s?] [NC]
-RewriteCond %{REQUEST_URI} ^(.+)\.html$ [NC]
-RewriteRule ^ %1/ [R=301,L,NE]
-
-# Add trailing slash if not a file or directory
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
-RewriteRule ^(.*)$ $1/ [R=301,L]
-
-# Prevent directory listing
-
+# Disable directory listing
 Options -Indexes
 
-# Enable GZIP Compression (GoDaddy optimized)
+# Basic security headers (add more if needed)
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header always append X-Frame-Options SAMEORIGIN
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Centralized error page for common errors
+ErrorDocument 400 /error.html
+ErrorDocument 401 /error.html
+ErrorDocument 403 /error.html
+ErrorDocument 404 /error.html
+ErrorDocument 500 /error.html
+
+# ------------------------------------------------------
+# Caching and Compression for Better Performance
+# ------------------------------------------------------
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Images: cache for 1 month
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+
+    # CSS and JS: cache for 1 week
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType text/javascript "access plus 1 week"
+
+    # HTML: no caching (always fresh)
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
 
 <IfModule mod_deflate.c>
-    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    # Compress text, html, javascript, css, xml, fonts
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
     AddOutputFilterByType DEFLATE text/xml
@@ -58,129 +101,16 @@ Options -Indexes
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
-    AddOutputFilterByType DEFLATE image/svg+xml
-    
-    # Remove browser bugs (only needed for really old browsers)
-    BrowserMatch ^Mozilla/4 gzip-only-text/html
-    BrowserMatch ^Mozilla/4\.0[678] no-gzip
-    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-    Header append Vary User-Agent
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+    AddOutputFilterByType DEFLATE application/font-woff
 </IfModule>
 
-# Enable Browser Caching (GoDaddy optimized)
-
-<IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresDefault "access plus 2 days"
-    
-    # Images
-    ExpiresByType image/jpg "access plus 1 year"
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
-    
-    # CSS and JavaScript
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType text/javascript "access plus 1 month"
-    
-    # Other
-    ExpiresByType application/pdf "access plus 1 month"
-    ExpiresByType text/x-js "access plus 1 month"
-    ExpiresByType application/x-shockwave-flash "access plus 1 month"
-    ExpiresByType image/x-icon "access plus 1 year"
-</IfModule>
-
-# Security Headers
-
+# Optional: prevent proxies from caching error pages too long
 <IfModule mod_headers.c>
-    # Prevent MIME-type sniffing
-    Header set X-Content-Type-Options "nosniff"
-    
-    # Enable XSS protection
-    Header set X-XSS-Protection "1; mode=block"
-    
-    # Prevent clickjacking
-    Header always append X-Frame-Options SAMEORIGIN
-    
-    # Content Security Policy
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com; frame-src https://www.google.com https://www.youtube.com;"
-    
-    # Referrer Policy
-    Header set Referrer-Policy "strict-origin-when-cross-origin"
-    
-    # Feature Policy
-    Header set Feature-Policy "geolocation 'self'; microphone 'none'; camera 'none'"
-    
-    # Keep-Alive (GoDaddy optimized)
-    Header set Connection keep-alive
-    
-    # Remove ETags
-    Header unset ETag
-    FileETag None
-    
-    # Prevent caching of sensitive pages
-    <FilesMatch "\.(php|html|htm)$">
-        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
         Header set Pragma "no-cache"
+        Header set Expires "0"
     </FilesMatch>
 </IfModule>
-
-# Error Handling
-
-ErrorDocument 400 /error.html
-ErrorDocument 401 /error.html
-ErrorDocument 403 /error.html
-ErrorDocument 404 /error.html
-ErrorDocument 500 /error.html
-
-# File Protection
-
-<FilesMatch "^(wp-config\.php|php\.ini|\.(git|svn|env|log|sql|bak|swp)|composer\.(json|lock))$">
-Require all denied
-</FilesMatch>
-
-# Disable server signature
-
-ServerSignature Off
-
-# Prevent access to .htaccess
-
-<Files .htaccess>
-Require all denied
-</Files>
-
-# Performance Settings for GoDaddy
-
-<IfModule mod_php.c>
-    php_value max_execution_time 30
-    php_value max_input_time 60
-    php_value memory_limit 128M
-    php_value post_max_size 16M
-    php_value upload_max_filesize 16M
-</IfModule>
-
-# PHP Error Handling
-
-<IfModule mod_php.c>
-    php_flag display_errors off
-    php_value error_reporting 0
-</IfModule>
-
-# Protect against common exploits
-
-<IfModule mod_rewrite.c>
-    RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
-    RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
-    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
-    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
-    RewriteRule ^(.*)$ - [F,L]
-</IfModule>
-
-# Prevent hotlinking
-
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https?://(www\.)?mainebreadoflife\.org/.*$ [NC]
-RewriteRule \.(jpg|jpeg|png|gif|svg)$ - [F,NC]
