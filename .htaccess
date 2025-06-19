@@ -9,14 +9,9 @@
     RewriteEngine On
     RewriteBase /
 
-    # 1. Force HTTPS (handles GoDaddy proxy headers)
-  #  RewriteCond %{HTTPS} off [OR]
-  #  RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  #  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
     # 2. Remove www (canonical domain without www)
-  #  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  #  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
     # 3. Block common malicious query strings
     RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
