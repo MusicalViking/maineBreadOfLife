@@ -1,0 +1,42 @@
+<!-- Community Recognition Section -->
+<section id="features" class="features section">
+
+    <div class="container section-title" data-aos="fade-up">
+        <h1>Community Recognition: Readers’ Choice Award</h1>
+        <p>
+            <b>
+                Voted Best Non-Profit Organization by Our Local Community<br />An Honor That Reflects
+                Our Mission
+            </b>
+        </p>
+    </div>
+    <!-- /Title -->
+
+    <div class="container">
+        <div class="row gy-4 align-items-center features-item">
+            <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+                <img src="/assets/img/rc_award.jpg" class="img-A" alt="Reader's Choice Award with BOL Team"
+                    loading="lazy" />
+            </div>
+            <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+                <h2>A Community Honor That Reflects Our Mission</h2>
+                <p>
+                    Bread of Life Ministries was awarded the Readers’ Choice Award for Best Non-Profit
+                    Organization, an honor made possible by the people we serve and the community that stands
+                    with us. This recognition isn’t just a badge — it is a testament to decades of hands-on work
+                    providing daily meals, emergency shelter, supportive housing, and stability for individuals
+                    and families facing hardship in Augusta and the surrounding region.
+                </p>
+                <p>
+                    Being chosen by local residents carries weight; it means our neighbors see the impact, trust
+                    our mission, and believe in the value we bring to the community. Paired with the image from
+                    the award ceremony, this achievement serves as a reminder that our work resonates beyond our
+                    walls, and that the community we support continues to support us in return.
+                </p>
+            </div>
+        </div>
+        <hr />
+    </div>
+
+    <!-- /Features -->
+</section>
